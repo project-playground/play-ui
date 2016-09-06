@@ -4,6 +4,8 @@ import semantic from 'semantic-ui-css/semantic.min.css';
 import icon from 'semantic-ui-css/components/icon.css';
 import classNames from 'classnames';
 
+const CLASSNAME = 'ui';
+
 /**
  * UIComponent
  */
@@ -14,7 +16,7 @@ export default class UIComponent extends React.Component {
 //		this.state.className = className(this.state.className, CLASSNAME);
 	}
 
-	getClassName() { return 'ui'; }
+	getClassName() { return CLASSNAME; }
 
 	componentWillMount() { console.log(this); };
 	componentDidMount() {};

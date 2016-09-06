@@ -14,20 +14,9 @@ export default class Button extends UIComponent {
 	}
 
 	getClassName() {
-		return classNames(super.getClassName(), 'button');
+		return classNames(super.getClassName(), CLASSNAME);
 	}
 
-/*
-	componentWillMount() {};
-	componentDidMount() {};
-	componentWillReceiveProps(nextProps) {};
-	shouldComponentUpdate(nextProps, nextState) {
-		return true;
-	}
-	componentWillUpdate(nextProps, nextState) {};
-	componentDidUpdate(prevProps, prevState) {};
-	componentWillUnMount() {};
-*/
 	render() {
 		let componentClass = this.getClassName();
 		let iconButton;
@@ -38,6 +27,24 @@ export default class Button extends UIComponent {
 
 		if(this.props.emphasis) {
 			componentClass = classNames(componentClass, this.props.emphasis);
+		}
+		
+		if(this.props.size) {
+			// TODO size check
+			componentClass = classNames(componentClass, this.props.size);
+		}
+		
+		if(this.props.disabled) {
+			componentClass = classNames(componentClass, 'disabled');
+		}
+		
+		if(this.props.colored) {
+			// TODO colored check
+			componentClass = classNames(componentClass, this.props.colored);
+		}
+		
+		if(this.props.compact) {
+			componentClass = classNames(componentClass, 'compact');
 		}
 
 		return (
