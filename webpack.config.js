@@ -8,8 +8,9 @@ module.exports = {
 
 	devServer: {
 		inline: true,
-		port: 7771,
-		contentBase: __dirname + '/public/'
+		colors: true,
+		contentBase: __dirname + '/public/',
+		host: '0.0.0.0'
 	},
 
 	module: {
@@ -21,6 +22,13 @@ module.exports = {
 				cacheDirectory: true,
 				presets: ['es2015', 'react']
 			}
+		}, {
+			test: /\.css$/,
+			exclude: /\.useable\.css$/,
+			loader: 'style-loader!css-loader'
+		}, {
+			test: /\.(png|jpg|svg|eot|woff|woff2|ttf)$/,
+			loader: 'url-loader?limit=8192'
 		}]
 	}
 };
