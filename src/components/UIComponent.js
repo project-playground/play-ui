@@ -13,12 +13,11 @@ export default class UIComponent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
-//		this.state.className = className(this.state.className, CLASSNAME);
 	}
 
 	getClassName() { return CLASSNAME; }
 
-	componentWillMount() { console.log(this); };
+	componentWillMount() {};
 	componentDidMount() {};
 	componentWillReceiveProps(nextProps) {};
 	shouldComponentUpdate(nextProps, nextState) {
