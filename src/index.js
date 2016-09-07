@@ -9,7 +9,8 @@ ReactDOM.render(
 	<div>
 		<div>
 			<h2>Button</h2>
-			<h3>Basic</h3>import Button from './components/Button';
+			<h3>Basic</h3>
+			<Button text="HelloWorld" />
 			
 			<h3>Emphasis</h3>
 			<Button text="Default" />

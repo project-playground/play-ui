@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 const CLASSNAME = 'buttons';
 
-export default class Button extends UIComponent {
+export default class Buttons extends UIComponent {
 	constructor(props) {
 		super(props);
 		this.state = {};
