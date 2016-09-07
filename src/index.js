@@ -1,17 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
+import classNames from 'classnames';
+
 import homeView from './views/HomeView';
 import buttonView from './views/ButtonView';
 import labelView from './views/LabelView';
 import inputView from './views/InputView';
 
 export default class Index extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			linkclassset: 'item'
+		};
+	}
 	
 	componentDidMount() {
 	}
 	
 	handleClick(event) {
+//		this.state.linkclassset = classNames(this.state.linkclassset, 'active');
 		console.log('click~~~', this.style);
 	}
 	

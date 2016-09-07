@@ -140,6 +140,7 @@ export default class ButtonView extends React.Component {
 				<h2>LabeledButton</h2>
 				<LabeledButton text="Like" label="2,050" icon="heart" />	
 				
+				<Divider />
 			</div>		
 		);
 	}
