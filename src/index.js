@@ -4,6 +4,7 @@ import Button from './components/Button';
 import Buttons from './components/Buttons';
 import LabeledButton from './components/LabeledButton';
 import Divider from './components/Divider';
+import Input from './components/Input';
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
@@ -73,6 +74,8 @@ ReactDOM.render(
 			<h3>Compact</h3>
 			<Button text="Compact" compact="true" />
 			
+			<Divider />
+		
 			<h2>Buttons</h2>
 			<h3>Basic</h3>
 			<Buttons>
@@ -133,11 +136,21 @@ ReactDOM.render(
 				<Button text="three" />
 			</Buttons>
 			
-		</div>
-		<Divider />
-		<div>
-			<h3>LabeledButton</h3>
-			<LabeledButton text="Like" label="2,050" icon="heart" />
+			<Divider />
+			
+			<h2>LabeledButton</h2>
+			<LabeledButton text="Like" label="2,050" icon="heart" />	
+			
+			<Divider />
+			
+			<h2>Input</h2>
+			<h3>Default</h3>
+			<Input />
+			
+			<h3>Placeholder</h3>
+			<Input placeholder="Hello World!!"/>
+						
+			<Divider />
 		</div>
 	</div>, 
 	rootElement
