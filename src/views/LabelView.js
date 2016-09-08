@@ -23,6 +23,9 @@ export default class LabelView extends React.Component {
 				<Label size="huge" text="Huge" />
 				<Label size="massive" text="Massive" />
 				
+				<h3>Icon</h3>
+				<Label icon="search" text="Search" />	
+				
 				<Divider />
 			</div>		
 		);

@@ -28,8 +28,14 @@ export default class Label extends UIComponent {
 			componentClass = classNames(componentClass, this.props.size);
 		}
 		
+		let icon;
+		if(this.props.icon) {
+			icon = <i className={classNames('icon', this.props.icon)} />
+		}
+		
 		return (
 			<div className={componentClass}>
+				{icon}
 				{this.props.text}
 			</div>
 		)
