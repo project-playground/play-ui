@@ -20,6 +20,14 @@ export default class Label extends UIComponent {
 	render() {
 		let componentClass = this.getClassName();
 		
+		if(this.props.basic) {
+			componentClass = classNames(componentClass, 'basic');
+		}
+		
+		if(this.props.size) {
+			componentClass = classNames(componentClass, this.props.size);
+		}
+		
 		return (
 			<div className={componentClass}>
 				{this.props.text}
