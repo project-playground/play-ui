@@ -23,10 +23,13 @@ export default class Button extends UIComponent {
 		if(this.props.icon) {
 			let iconClass = classNames('icon', this.props.icon);
 			iconButton = <i className={iconClass} />
+			if(!this.props.text) {
+				componentClass = classNames(componentClass, 'icon');
+			}
 		}
 
-		if(this.props.emphasis) {
-			componentClass = classNames(componentClass, this.props.emphasis);
+		if(this.props.basic) {
+			componentClass = classNames(componentClass, 'basic');
 		}
 		
 		if(this.props.size) {
@@ -34,8 +37,9 @@ export default class Button extends UIComponent {
 			componentClass = classNames(componentClass, this.props.size);
 		}
 		
-		if(this.props.disabled) {
-			componentClass = classNames(componentClass, 'disabled');
+		if(this.props.state) {
+			// TODO state check
+			componentClass = classNames(componentClass, this.props.state);
 		}
 		
 		if(this.props.colored) {
