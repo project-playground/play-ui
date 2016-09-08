@@ -15,7 +15,13 @@ export default class UIComponent extends React.Component {
 		this.state = {};
 	}
 
-	getClassName() { return CLASSNAME; }
+	getClassName() { 
+		let renderClassName = CLASSNAME;
+		/* if(this.props.state) {
+			renderClassName = classNames(renderClassName, this.props.state);
+		} */
+		return renderClassName;
+	}
 
 	componentWillMount() {};
 	componentDidMount() {};

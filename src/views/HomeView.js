@@ -34,6 +34,17 @@ export default class HomeView extends React.Component {
 		          <div className="content">
 		            <Link to="button" className="header">Button</Link>
 		            <div className="description">Button Component의 기본 기능을 구성한다</div>
+	
+			        <div className="list">
+		              <div className="item">
+		                <i className="folder icon"></i>
+		                <div className="content">
+		                  <Link to="button" className="header">LabeledButton</Link>
+		                  <div className="description">LabeledButton Component의 기본 기능을 구성한다</div>
+                        </div>
+		              </div>
+		            </div>
+		            
 		          </div>
 		        </div>
 		        <div className="item">
@@ -48,6 +59,17 @@ export default class HomeView extends React.Component {
 		          <div className="content">
 		            <Link to="input" className="header">Input</Link>
 		            <div className="description">Input Component의 기본 기능을 구성한다</div>
+
+			        <div className="list">
+		              <div className="item">
+		                <i className="folder icon"></i>
+		                <div className="content">
+		                  <Link to="labeledInput" className="header">LabeledInput</Link>
+		                  <div className="description">LabeledInput Component의 기본 기능을 구성한다</div>
+                        </div>
+		              </div>
+		            </div>
+
 		          </div>
 		        </div>
 		      </div>

@@ -11,7 +11,7 @@ export default class Input extends UIComponent {
 		super(props);
 		this.state = {};
 	}
-
+	
 	getClassName() {
 		return classNames(super.getClassName(), CLASSNAME);
 	}
@@ -19,11 +19,27 @@ export default class Input extends UIComponent {
 	render() {
 		let componentClass = this.getClassName();
 		
-		return (
-			<div className={componentClass}>
-				<input type="text" placeholder={this.props.placeholder} />
-			</div>
-		)
+		let icon;
+		if(this.props.icon) {
+			if(this.props.iconalign) {
+				componentClass = classNames(componentClass, this.props.iconalign);
+			}
+
+			componentClass = classNames(componentClass, 'icon');
+			icon = <i className={classNames('icon', this.props.icon)} />;
+		}
+		
+		let result;
+		if(this.props.isContained) {
+			result = <input type={this.props.type} placeholder={this.props.placeholder} defaultValue={this.props.value} />;
+		} else {
+			result = <div className={componentClass}>
+				<input type={this.props.type} placeholder={this.props.placeholder} defaultValue={this.props.value} />
+				{icon}
+			</div>;
+		}
+		
+		return result;
 	};
 }
 

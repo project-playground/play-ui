@@ -1,4 +1,4 @@
-// Button.js
+// LabeledButton.js
 import React, { Component, PropTypes  } from 'react';
 import Button from './Button';
 import classNames from 'classnames';
