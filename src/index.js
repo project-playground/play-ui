@@ -12,16 +12,33 @@ export default class Index extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			linkclassset: 'item'
+			currentView: ''
 		};
+		// for access Index in eventMethod
+		this.handleClick = this.handleClick.bind(this);
+		this.getMenuActiveState = this.getMenuActiveState.bind(this);
 	}
 	
-	componentDidMount() {
+	componentWillMount() {
+		this.changeLocation();
+	}
+
+	changeLocation() {
+		const path = this.props.location.pathname.split('/');
+		const currentView = path[path.length - 1];
+		this.setState({ currentView });
 	}
 	
 	handleClick(event) {
-//		this.state.linkclassset = classNames(this.state.linkclassset, 'active');
-		console.log('click~~~', this.style);
+		this.setState({ currentView: event.target.getAttribute('href') });
+	}
+	
+	getMenuActiveState(link) {
+		let classes = 'item';
+		if(this.state.currentView === link) {
+			classes += ' active';
+		}
+		return classes;
 	}
 	
 	render() {
@@ -29,10 +46,10 @@ export default class Index extends React.Component {
 			<div className="ui container">
 				<div className="ui inverted segment">
 					<div className="ui inverted secondary pointing menu">
-						<Link className="active item" to="home" onClick={this.handleClick}>Home</Link>
-						<Link className="item" to="button" onClick={this.handleClick}>Button</Link>
-						<Link className="item" to="label" onClick={this.handleClick}>Label</Link>
-						<Link className="item" to="input" onClick={this.handleClick}>Input</Link>
+						<Link className={this.getMenuActiveState('home')} to="home" onClick={this.handleClick}>Home</Link>
+						<Link className={this.getMenuActiveState('button')} to="button" onClick={this.handleClick}>Button</Link>
+						<Link className={this.getMenuActiveState('label')} to="label" onClick={this.handleClick}>Label</Link>
+						<Link className={this.getMenuActiveState('input')} to="input" onClick={this.handleClick}>Input</Link>
 					</div>
 				</div>
 				
