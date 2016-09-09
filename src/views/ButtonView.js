@@ -84,20 +84,20 @@ export default class ButtonView extends React.Component {
 				</Buttons>
 				
 				<h3>Icon Buttons</h3>
-				<Buttons icon="true">
+				<Buttons icon={true}>
 					<Button icon="align left" />
 					<Button icon="align center" />
 					<Button icon="align right" />
 					<Button icon="align justify" />
 				</Buttons>
-				<Buttons icon="true">
+				<Buttons icon={true}>
 					<Button icon="bold" />
 					<Button icon="underline" />
 					<Button icon="text width" />
 				</Buttons>
 				
 				<h3>Vertical</h3>
-				<Buttons vertical="true">
+				<Buttons vertical={true}>
 					<Button text="Hello" />
 					<Button text="World" />
 					<Button text="Playground" />
@@ -110,12 +110,12 @@ export default class ButtonView extends React.Component {
 				</Buttons>
 				
 				<h3>Equal Width</h3>
-				<Buttons equalwidth="true">
+				<Buttons equalwidth={true}>
 					<Button text="one" />
 					<Button text="two" />
 					<Button text="three" />
 				</Buttons>
-				<Buttons equalwidth="true">
+				<Buttons equalwidth={true}>
 					<Button text="one" />
 					<Button text="two" />
 					<Button text="three" />
