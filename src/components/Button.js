@@ -66,7 +66,7 @@ Button.propTypes = {
 	icon: PropTypes.string,
 	state: PropTypes.oneOf(['active', 'disabled', 'loading']),
 	size: PropTypes.oneOf(['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive']),
-	basic: PropTypes.oneOf(['true', 'false']),
+	basic: PropTypes.bool,
 	colored: PropTypes.oneOf(['primary', 'secondary', 'red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'brown', 'pink', 'grey', 'black']),
-	compact: PropTypes.oneOf(['true', 'false'])
+	compact: PropTypes.bool
 }
