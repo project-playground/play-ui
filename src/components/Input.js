@@ -21,12 +21,12 @@ export default class Input extends UIComponent {
 		
 		let icon;
 		if(this.props.icon) {
-			if(this.props.iconalign) {
-				componentClass = classNames(componentClass, this.props.iconalign);
+			if(this.props.icon.align) {
+				componentClass = classNames(componentClass, this.props.icon.align);
 			}
 
 			componentClass = classNames(componentClass, 'icon');
-			icon = <i className={classNames('icon', this.props.icon)} />;
+			icon = <i className={classNames('icon', this.props.icon.icon)} />;
 		}
 		
 		let result;
@@ -43,3 +43,12 @@ export default class Input extends UIComponent {
 	};
 }
 
+Input.propTypes = {
+	value: PropTypes.string,
+	placeholder: PropTypes.string,
+	icon: PropTypes.shape({
+		icon: PropTypes.string.isRequired,
+		align: PropTypes.oneOf(['left', 'right']),
+	}),
+	
+}
