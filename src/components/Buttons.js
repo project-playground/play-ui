@@ -91,3 +91,10 @@ export default class Buttons extends UIComponent {
 	};
 }
 
+Buttons.propTypes = {
+	icon: PropTypes.oneOf(['true', 'false']),
+	vertical: PropTypes.oneOf(['true', 'false']),
+	condition: PropTypes.string,
+	equalwidth: PropTypes.oneOf(['true', 'false']),
+	colored: PropTypes.oneOf(['primary', 'secondary', 'red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'brown', 'pink', 'grey', 'black'])
+}

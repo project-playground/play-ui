@@ -19,7 +19,9 @@ export default class LabeledInput extends Input {
 	render() {
 		let componentClass = this.getClassName();
 		
-		
+		if(this.props.labelicon) {
+			
+		}
 		
 		return (
 			<div className={componentClass}>
