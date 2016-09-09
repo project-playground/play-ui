@@ -5,7 +5,6 @@ import Divider from '../components/Divider';
 
 export default class InputView extends React.Component {
 	render() {
-		let icon = {icon: 'search'};
 		let iconAlign1 = {icon: 'user', align: 'left'};
 		let iconAlign2 = {icon: 'user', align: 'right'};
 		return (
@@ -21,7 +20,7 @@ export default class InputView extends React.Component {
 				<Input placeholder="Hello World" />
 
 				<h3>Icon</h3>
-				<Input icon={icon} />
+				<Input icon="search" />
 				
 				<h3>Icon Align</h3>
 				<Input icon={iconAlign1} placeholder="Icon Left" />
