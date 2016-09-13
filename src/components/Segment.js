@@ -18,6 +18,10 @@ export default class Segment extends UIComponent {
 
 	render() {
 		let componentClass = this.getClassName();
+		
+		if(this.props.attached) {
+			componentClass = classNames(componentClass, this.props.attached + ' attached');
+		}
 						
 		return (
 			<div className={componentClass}>
@@ -27,20 +31,11 @@ export default class Segment extends UIComponent {
 	};
 }
 
-/*
-Divider.propTypes = {
-	type: PropTypes.oneOf(['horizontal', 'vertical']),
-	header: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.shape({
-			title: PropTypes.string.isRequired,
-			icon: PropTypes.string
-		})
-	]),
-	hidden: PropTypes.bool,
-	fitted: PropTypes.bool
+Segment.propTypes = {
+	attached: PropTypes.oneOf(['top', 'bottom']),
 }
 
+/*
 Divider.defaultProps = {
 	type: 'horizontal',
 	hidden: false,
