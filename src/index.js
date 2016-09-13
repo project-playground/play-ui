@@ -10,7 +10,8 @@ import inputView from './views/InputView';
 import labeledInputView from './views/LabeledInputView';
 import dividerView from './views/DividerView';
 import messageView from './views/MessageView';
-import gridView from './views/GridView'
+import gridView from './views/GridView';
+import menuView from './views/MenuView';
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -58,6 +59,7 @@ export default class Index extends React.Component {
 						<Link className={this.getMenuActiveState('divider')} to="divider" onClick={this.handleClick}>Divider</Link>
 						<Link className={this.getMenuActiveState('message')} to="message" onClick={this.handleClick}>Message</Link>
 						<Link className={this.getMenuActiveState('grid')} to="grid" onClick={this.handleClick}>Grid</Link>
+						<Link className={this.getMenuActiveState('menu')} to="menu" onClick={this.handleClick}>Menu</Link>
 					</div>
 				</div>
 				
@@ -79,6 +81,7 @@ ReactDOM.render(
 			<Route path="divider" component={dividerView} />
 			<Route path="message" component={messageView} />
 			<Route path="grid" component={gridView} />
+			<Route path="menu" component={menuView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
