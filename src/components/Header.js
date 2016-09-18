@@ -34,13 +34,11 @@ export default class Header extends UIComponent {
     let textContent;
     if(this.props.icon || this.props.contentIcon || this.props.img) {
       if(this.props.icon || this.props.contentIcon) {
-        let iconClass;
         if(this.props.icon) {
           componentClass = classNames(componentClass, 'icon');
         }
 
-        iconClass = classNames(this.props.icon || this.props.contentIcon, 'icon');
-
+        let iconClass = classNames(this.props.icon || this.props.contentIcon, 'icon');
         iContent = <i className={iconClass}></i>;
       } else {
         let imgClass = classNames('ui', this.props.img);
