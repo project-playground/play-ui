@@ -34,7 +34,7 @@ export default class ButtonView extends React.Component {
 				
 				<h3>Basic</h3>
 				<Button text="Default" />
-				<Button text="Basic" basic="true" />
+				<Button text="Basic" basic={true} />
 				
 				<h3>Colored</h3>
 				<Button text="Primary" colored="primary" />
@@ -54,24 +54,24 @@ export default class ButtonView extends React.Component {
 				<Button text="Black" colored="black" />
 				
 				<h3>Basic + Colored</h3>
-				<Button text="Primary" basic="true" colored="primary" />
-				<Button text="Secondary" basic="true" colored="secondary" />
-				<Button text="Red" basic="true" colored="red" />
-				<Button text="Orange" basic="true" colored="orange" />
-				<Button text="Yellow" basic="true" colored="yellow" />
-				<Button text="Olive" basic="true" colored="olive" />
-				<Button text="Green" basic="true" colored="green" />
-				<Button text="Teal" basic="true" colored="teal" />
-				<Button text="Blue" basic="true" colored="blue" />
-				<Button text="Violet" basic="true" colored="violet" />
-				<Button text="Purple" basic="true" colored="purple" />
-				<Button text="Brown" basic="true" colored="brown" />
-				<Button text="Pink" basic="true" colored="pink" />
-				<Button text="Grey" basic="true" colored="grey" />
-				<Button text="Black" basic="true" colored="black" />
-	
+				<Button text="Primary" basic={true} colored="primary" />
+				<Button text="Secondary" basic={true} colored="secondary" />
+				<Button text="Red" basic={true} colored="red" />
+				<Button text="Orange" basic={true} colored="orange" />
+				<Button text="Yellow" basic={true} colored="yellow" />
+				<Button text="Olive" basic={true} colored="olive" />
+				<Button text="Green" basic={true} colored="green" />
+				<Button text="Teal" basic={true} colored="teal" />
+				<Button text="Blue" basic={true} colored="blue" />
+				<Button text="Violet" basic={true} colored="violet" />
+				<Button text="Purple" basic={true} colored="purple" />
+				<Button text="Brown" basic={true} colored="brown" />
+				<Button text="Pink" basic={true} colored="pink" />
+				<Button text="Grey" basic={true} colored="grey" />
+				<Button text="Black" basic={true} colored="black" />
+
 				<h3>Compact</h3>
-				<Button text="Compact" compact="true" />
+				<Button text="Compact" compact={true} />
 				
 				<Divider />
 			
@@ -84,20 +84,20 @@ export default class ButtonView extends React.Component {
 				</Buttons>
 				
 				<h3>Icon Buttons</h3>
-				<Buttons icon="true">
+				<Buttons icon={true}>
 					<Button icon="align left" />
 					<Button icon="align center" />
 					<Button icon="align right" />
 					<Button icon="align justify" />
 				</Buttons>
-				<Buttons icon="true">
+				<Buttons icon={true}>
 					<Button icon="bold" />
 					<Button icon="underline" />
 					<Button icon="text width" />
 				</Buttons>
 				
 				<h3>Vertical</h3>
-				<Buttons vertical="true">
+				<Buttons vertical={true}>
 					<Button text="Hello" />
 					<Button text="World" />
 					<Button text="Playground" />
@@ -110,12 +110,12 @@ export default class ButtonView extends React.Component {
 				</Buttons>
 				
 				<h3>Equal Width</h3>
-				<Buttons equalwidth="true">
+				<Buttons equalwidth={true}>
 					<Button text="one" />
 					<Button text="two" />
 					<Button text="three" />
 				</Buttons>
-				<Buttons equalwidth="true">
+				<Buttons equalwidth={true}>
 					<Button text="one" />
 					<Button text="two" />
 					<Button text="three" />

@@ -18,9 +18,63 @@ export default class Divider extends UIComponent {
 	render() {
 		let componentClass = this.getClassName();
 		
-		return (
-			<div className={componentClass}></div>
-		)
+		if(this.props.type) {
+			if(this.props.type === 'horizontal' && this.props.header) {
+				componentClass = classNames(componentClass, this.props.type);
+			}
+		}
+		
+		if(this.props.hidden) {
+			componentClass = classNames(componentClass, 'hidden');
+		}
+		
+		if(this.props.fitted) {
+			componentClass = classNames(componentClass, 'fitted');
+		}
+		
+		if(this.props.section) {
+			componentClass = classNames(componentClass, 'section');
+		}
+		
+		let result;
+		if(this.props.header) {
+			componentClass = classNames(componentClass, 'header');
+			let title;
+			let icon;
+			if(typeof this.props.header === 'string') {
+				title = this.props.header;
+			} else {
+				title = this.props.header.title;
+				if(this.props.header.icon) {
+					icon = <i className={classNames('icon', this.props.header.icon)} />;
+				}
+			}
+			result = <h4 className={componentClass}>{icon}{title}</h4>;
+		} else {
+			result = <div className={componentClass}></div>
+		}
+		
+		console.log(result);
+		
+		return result;
 	};
 }
 
+Divider.propTypes = {
+	type: PropTypes.oneOf(['horizontal', 'vertical']),
+	header: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.shape({
+			title: PropTypes.string.isRequired,
+			icon: PropTypes.string
+		})
+	]),
+	hidden: PropTypes.bool,
+	fitted: PropTypes.bool
+}
+
+Divider.defaultProps = {
+	type: 'horizontal',
+	hidden: false,
+	fitted: false
+}

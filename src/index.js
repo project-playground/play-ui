@@ -8,6 +8,11 @@ import buttonView from './views/ButtonView';
 import labelView from './views/LabelView';
 import inputView from './views/InputView';
 import labeledInputView from './views/LabeledInputView';
+import dividerView from './views/DividerView';
+import messageView from './views/MessageView';
+import gridView from './views/GridView';
+import menuView from './views/MenuView';
+import headerView from './views/HeaderView';
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -52,6 +57,11 @@ export default class Index extends React.Component {
 						<Link className={this.getMenuActiveState('label')} to="label" onClick={this.handleClick}>Label</Link>
 						<Link className={this.getMenuActiveState('input')} to="input" onClick={this.handleClick}>Input</Link>
 						<Link className={this.getMenuActiveState('labeledInput')} to="labeledInput" onClick={this.handleClick}>LabeledInput</Link>
+						<Link className={this.getMenuActiveState('divider')} to="divider" onClick={this.handleClick}>Divider</Link>
+						<Link className={this.getMenuActiveState('message')} to="message" onClick={this.handleClick}>Message</Link>
+                        <Link className={this.getMenuActiveState('header')} to="header" onClick={this.handleClick}>Header</Link>
+						<Link className={this.getMenuActiveState('grid')} to="grid" onClick={this.handleClick}>Grid</Link>
+						<Link className={this.getMenuActiveState('menu')} to="menu" onClick={this.handleClick}>Menu</Link>
 					</div>
 				</div>
 				
@@ -70,6 +80,11 @@ ReactDOM.render(
 			<Route path="label" component={labelView} />
 			<Route path="input" component={inputView} />
 			<Route path="labeledInput" component={labeledInputView} />
+			<Route path="divider" component={dividerView} />
+			<Route path="message" component={messageView} />
+			<Route path="header" component={headerView} />
+			<Route path="grid" component={gridView} />
+			<Route path="menu" component={menuView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')

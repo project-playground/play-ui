@@ -72,6 +72,15 @@ export default class HomeView extends React.Component {
 
 		          </div>
 		        </div>
+		        
+		        <div className="item">
+		          <i className="folder icon"></i>
+		          <div className="content">
+		            <Link to="divider" className="header">Divider</Link>
+		            <div className="description">Divider Component의 기본 기능을 구성한다</div>
+		          </div>
+		        </div>
+		        
 		      </div>
 
           </div>
