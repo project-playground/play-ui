@@ -12,15 +12,15 @@ export default class Header extends UIComponent {
 
   getClassName() {
     return classNames(super.getClassName(),
-        this.props.disabled == 'disabled' || this.props.disabled == 'true' ? 'disabled' : '',
+        this.props.disabled == 'disabled' || this.props.disabled ? 'disabled' : '',
         this.props.align ? (this.props.align == 'justified' ? this.props.align : this.props.align + ' aligned') : '',
-        this.props.sub && (this.props.sub == 'sub' || this.props.sub == 'true') ? 'sub' : '',
-        this.props.divide && (this.props.divide == 'divide' || this.props.divide == 'true') ? 'dividing' : '',
-        this.props.block && (this.props.block == 'block' || this.props.block == 'true') ? 'block' : '',
-        this.props.attached ? this.props.attached : '',
-        this.props.floated ? this.props.floated : '',
-        this.props.color ? this.props.color : '',
-        this.props.inverted && (this.props.inverted == 'inverted' || this.props.inverted == 'true') ? 'inverted' : '',
+        this.props.sub == 'sub' || this.props.sub ? 'sub' : '',
+        this.props.divide == 'divide' || this.props.divide ? 'dividing' : '',
+        this.props.block == 'block' || this.props.block ? 'block' : '',
+        this.props.attached ? (this.props.attached == 'default' ? '' : this.props.attached) + ' attached' : '',
+        this.props.floated ? this.props.floated + ' floated' : '',
+        this.props.colored ? this.props.colored : '',
+        this.props.inverted == 'inverted' || this.props.inverted ? 'inverted' : '',
         CLASSNAME
     );
   }
@@ -37,12 +37,13 @@ export default class Header extends UIComponent {
         if(this.props.icon) {
           componentClass = classNames(componentClass, 'icon');
         }
-
-        let iconClass = classNames(this.props.icon || this.props.contentIcon, 'icon');
+        
+        let iconClass = classNames(this.props.icon || this.props.contentIcon,
+                                   this.props.circular ? 'circular' : '', 'icon');
         iContent = <i className={iconClass}></i>;
       } else {
-        let imgClass = classNames('ui', this.props.img);
-        imgContent = <img className={imgClass} src={this.props.src}></img>;
+        let imgClass = classNames('ui', this.props.circular ? 'circular' : '', 'image');
+        imgContent = <img className={imgClass} src={this.props.img}></img>;
       }
 
       textContent = <div className="content">
@@ -58,15 +59,15 @@ export default class Header extends UIComponent {
 
     let header;
     
-    if(this.props.type === 'h1') {
+    if(this.props.size === 1) {
       header = <h1 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h1>;
-    } else if(this.props.type === 'h2') {
+    } else if(this.props.size === 2) {
       header = <h2 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h2>;
-    } else if(this.props.type === 'h3') {
+    } else if(this.props.size === 3) {
       header = <h3 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h3>;
-    } else if(this.props.type === 'h4') {
+    } else if(this.props.size === 4) {
       header = <h4 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h4>;
-    } else if(this.props.type === 'h5') {
+    } else if(this.props.size === 5) {
       header = <h5 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h5>;
     }
 
@@ -75,10 +76,38 @@ export default class Header extends UIComponent {
 }
 
 Header.propTypes = {
-  type: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5']),
+  size: PropTypes.oneOf([1, 2, 3, 4, 5]),
   text: PropTypes.string.isRequired,
   icon: PropTypes.string,
-  subText: PropTypes.string
+  circular: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['circular'])
+  ]),
+  subText: PropTypes.string,
+  sub: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['sub'])
+  ]),
+  img: PropTypes.string,
+  contentIcon: PropTypes.string,
+  disabled: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['disabled'])
+  ]),
+  divide: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['divide'])
+  ]),
+  block: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['block'])
+  ]),
+  attached: PropTypes.oneOf(['top', 'default', 'bottom']),
+  floated: PropTypes.oneOf(['right', 'left']),
+  inverted: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['inverted'])
+  ]),
 }
 
 Header.defaultProps = {
