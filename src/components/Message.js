@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 const CLASSNAME = 'message';
 
-export default class Mesage extends UIComponent {
+export default class Message extends UIComponent {
 	constructor(props) {
 		super(props);
 		this.state = {};
@@ -48,19 +48,20 @@ export default class Mesage extends UIComponent {
 		}
 		
 		if(this.props.hidden) {
-			componentClass = classNames(super.getClassName(), "hidden", CLASSNAME);
+			componentClass = classNames(componentClass, "hidden");
 		}
 		
 		if(this.props.visible) {
-			componentClass = classNames(super.getClassName(), "visible", CLASSNAME);
+			componentClass = classNames(componentClass, "visible");
 		}
+		{/*priority hidden > visible*/}
 		
 		if(this.props.floating) {
-			componentClass = classNames(super.getClassName(), "floating", CLASSNAME);
+			componentClass = classNames(componentClass, "floating");
 		}
 		
 		if(this.props.compact) {
-			componentClass = classNames(super.getClassName(), "compact", CLASSNAME);
+			componentClass = classNames(componentClass, "compact");
 		}
 		
 		if(this.props.level) {
@@ -70,11 +71,11 @@ export default class Mesage extends UIComponent {
 		if(this.props.colored) {
 			componentClass = classNames(componentClass, this.props.colored)
 		}
+		{/*colored > level priority*/}
 		
 		if(this.props.size) {
 			componentClass = classNames(componentClass, this.props.size)
 		}
-		
 						
 		return (
 			<div className={componentClass}>
@@ -86,23 +87,13 @@ export default class Mesage extends UIComponent {
 	};
 }
 
-/*
-Divider.propTypes = {
-	type: PropTypes.oneOf(['horizontal', 'vertical']),
-	header: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.shape({
-			title: PropTypes.string.isRequired,
-			icon: PropTypes.string
-		})
-	]),
+Message.propTypes = {
+	header: PropTypes.string,
+	text: PropTypes.string,
+	icon: PropTypes.string,
+	close: PropTypes.bool,
 	hidden: PropTypes.bool,
-	fitted: PropTypes.bool
+	visible: PropTypes.bool,
+	level: PropTypes.oneOf(['warning', 'info', 'positive', 'success', 'negative', 'error']),
+	colored: PropTypes.oneOf(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'black'])
 }
-
-Divider.defaultProps = {
-	type: 'horizontal',
-	hidden: false,
-	fitted: false
-}
-*/

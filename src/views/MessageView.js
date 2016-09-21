@@ -67,10 +67,31 @@ export default class MessageView extends React.Component {
 				<Message header="Huge" size="huge" />
 				<Message header="Massive" size="massive" />
 				
-				<h3>Message</h3>
+				{/*
+				<h3>Message Test</h3>
 				<Message header="warning colored yellow" level="warning" colored="yellow" />
 				<Message header="warning colored red size big" level="warning" colored="red" size="big" />
-
+				
+				<h3>test</h3>
+				<div className="ui visible hidden message">
+					<div className="header"> hidden visible</div>
+				</div>
+				<Message header="Message hidden visible" hidden={true} visible={true} />
+				<div className="ui floating compact message">
+					<div className="header"> floating compact</div>
+				</div>
+				<Message header="Message floating compact" floating={true} compact={true} />
+				<div className="ui red error message">
+					<div className="header">red error header</div>
+				</div>
+				<Message header="Message red error" level="error" colored="red" />
+				<div className="ui error red message">
+					<div className="header">error red header</div>
+				</div>
+				<Message header="Message red" colored="red" />
+				<Message header="Message error" level="error" />
+				*/}
+				
 			</div>		
 		);
 	}
