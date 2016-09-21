@@ -18,7 +18,7 @@ export default class Mesage extends UIComponent {
 
 	render() {
 		let componentClass = this.getClassName();
-			
+		let close;
 		let header;
 		if(this.props.header) {
 			header = <div className="header">{this.props.header}</div>
@@ -28,11 +28,59 @@ export default class Mesage extends UIComponent {
 		if(this.props.text) {
 			text = <p>{this.props.text}</p>
 		}
+		
+		let icon;
+		let iconClass;
+		let content;
+		if(this.props.icon) {
+			iconClass = classNames(this.props.icon, "icon");
+			componentClass = classNames(componentClass, "icon");
+			icon = <i className={iconClass}></i>
+			
+			content = <div className="content">{header}{text}</div>
+			
+		} else {
+			content = <span>{header}{text}</span>;
+		}
+		
+		if(this.props.close) {
+			close = <i className="close icon"></i>
+		}
+		
+		if(this.props.hidden) {
+			componentClass = classNames(super.getClassName(), "hidden", CLASSNAME);
+		}
+		
+		if(this.props.visible) {
+			componentClass = classNames(super.getClassName(), "visible", CLASSNAME);
+		}
+		
+		if(this.props.floating) {
+			componentClass = classNames(super.getClassName(), "floating", CLASSNAME);
+		}
+		
+		if(this.props.compact) {
+			componentClass = classNames(super.getClassName(), "compact", CLASSNAME);
+		}
+		
+		if(this.props.level) {
+			componentClass = classNames(componentClass, this.props.level)
+		}
+		
+		if(this.props.colored) {
+			componentClass = classNames(componentClass, this.props.colored)
+		}
+		
+		if(this.props.size) {
+			componentClass = classNames(componentClass, this.props.size)
+		}
+		
 						
 		return (
 			<div className={componentClass}>
-				{header}
-				{text}
+				{icon}
+				{close}
+				{content}
 			</div>
 		);
 	};
