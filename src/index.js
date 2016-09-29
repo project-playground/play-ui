@@ -13,6 +13,7 @@ import messageView from './views/MessageView';
 import gridView from './views/GridView';
 import menuView from './views/MenuView';
 import headerView from './views/HeaderView';
+import stepView from './views/StepView';
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -62,6 +63,7 @@ export default class Index extends React.Component {
                         <Link className={this.getMenuActiveState('header')} to="header" onClick={this.handleClick}>Header</Link>
 						<Link className={this.getMenuActiveState('grid')} to="grid" onClick={this.handleClick}>Grid</Link>
 						<Link className={this.getMenuActiveState('menu')} to="menu" onClick={this.handleClick}>Menu</Link>
+						<Link className={this.getMenuActiveState('step')} to="step" onClick={this.handleClick}>Step</Link>
 					</div>
 				</div>
 				
@@ -85,6 +87,7 @@ ReactDOM.render(
 			<Route path="header" component={headerView} />
 			<Route path="grid" component={gridView} />
 			<Route path="menu" component={menuView} />
+			<Route path="step" component={stepView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
