@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 const CLASSNAME = 'message';
 
-export default class Mesage extends UIComponent {
+export default class Message extends UIComponent {
 	constructor(props) {
 		super(props);
 		this.state = {};
@@ -18,7 +18,7 @@ export default class Mesage extends UIComponent {
 
 	render() {
 		let componentClass = this.getClassName();
-			
+		let close;
 		let header;
 		if(this.props.header) {
 			header = <div className="header">{this.props.header}</div>
@@ -28,33 +28,72 @@ export default class Mesage extends UIComponent {
 		if(this.props.text) {
 			text = <p>{this.props.text}</p>
 		}
+		
+		let icon;
+		let iconClass;
+		let content;
+		if(this.props.icon) {
+			iconClass = classNames(this.props.icon, "icon");
+			componentClass = classNames(componentClass, "icon");
+			icon = <i className={iconClass}></i>
+			
+			content = <div className="content">{header}{text}</div>
+			
+		} else {
+			content = <span>{header}{text}</span>;
+		}
+		
+		if(this.props.close) {
+			close = <i className="close icon"></i>
+		}
+		
+		if(this.props.hidden) {
+			componentClass = classNames(componentClass, "hidden");
+		}
+		
+		if(this.props.visible) {
+			componentClass = classNames(componentClass, "visible");
+		}
+		{/*priority hidden > visible*/}
+		
+		if(this.props.floating) {
+			componentClass = classNames(componentClass, "floating");
+		}
+		
+		if(this.props.compact) {
+			componentClass = classNames(componentClass, "compact");
+		}
+		
+		if(this.props.level) {
+			componentClass = classNames(componentClass, this.props.level)
+		}
+		
+		if(this.props.colored) {
+			componentClass = classNames(componentClass, this.props.colored)
+		}
+		{/*colored > level priority*/}
+		
+		if(this.props.size) {
+			componentClass = classNames(componentClass, this.props.size)
+		}
 						
 		return (
 			<div className={componentClass}>
-				{header}
-				{text}
+				{icon}
+				{close}
+				{content}
 			</div>
 		);
 	};
 }
 
-/*
-Divider.propTypes = {
-	type: PropTypes.oneOf(['horizontal', 'vertical']),
-	header: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.shape({
-			title: PropTypes.string.isRequired,
-			icon: PropTypes.string
-		})
-	]),
+Message.propTypes = {
+	header: PropTypes.string,
+	text: PropTypes.string,
+	icon: PropTypes.string,
+	close: PropTypes.bool,
 	hidden: PropTypes.bool,
-	fitted: PropTypes.bool
+	visible: PropTypes.bool,
+	level: PropTypes.oneOf(['warning', 'info', 'positive', 'success', 'negative', 'error']),
+	colored: PropTypes.oneOf(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'black'])
 }
-
-Divider.defaultProps = {
-	type: 'horizontal',
-	hidden: false,
-	fitted: false
-}
-*/
