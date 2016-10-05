@@ -54,8 +54,6 @@ export default class Divider extends UIComponent {
 			result = <div className={componentClass}></div>
 		}
 		
-		console.log(result);
-		
 		return result;
 	};
 }

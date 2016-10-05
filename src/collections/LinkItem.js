@@ -3,25 +3,32 @@ import React, { Component, PropTypes  } from 'react';
 import Item from '../collections/Item';
 import classNames from 'classnames';
 
-export default class MenuItem extends Item {
+export default class LinkItem extends Item {
 	constructor(props) {
 		super(props);
 		this.state = {};
 	}
 
 	getClassName() {
-		return classNames(super.getClassName(), CLASSNAME);
+		return super.getClassName();
 	}
 
 	render() {
 		let componentClass = this.getClassName();
-		
+
 		if(this.props.state) {
 			componentClass = classNames(componentClass, this.props.state);
 		}
-					
+
+		let icon;
+		if(this.props.icon) {
+			icon = <i className={classNames(this.props.icon, 'icon')} />;
+		}
+
 		return (
 			<a className={componentClass}>
+				{icon}
+				{this.props.text}
 				{this.props.children}
 			</a>
 		);
@@ -29,8 +36,9 @@ export default class MenuItem extends Item {
 }
 
 
-MenuItem.propTypes = {
-	state: PropTypes.oneOf(['active'])
+LinkItem.propTypes = {
+	state: PropTypes.oneOf(['active']),
+	icon: PropTypes.string
 }
 /*
 MenuItem.defaultProps = {

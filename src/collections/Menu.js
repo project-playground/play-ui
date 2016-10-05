@@ -1,6 +1,7 @@
 // Menu.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from '../components/UIComponent';
+
 import menu from 'semantic-ui-css/components/menu.css';
 import classNames from 'classnames';
 
@@ -13,28 +14,36 @@ export default class Menu extends UIComponent {
 	}
 
 	getClassName() {
-		return classNames(super.getClassName(), CLASSNAME);
+		if(this.props.sub) {
+			return CLASSNAME;
+		} else {
+			return classNames(super.getClassName(), CLASSNAME);
+		}
 	}
 
 	render() {
 		let componentClass = this.getClassName();
-		
+
 		if(this.props.type && this.props.type != 'basic') {
 			componentClass = classNames(componentClass, this.props.type);
 		}
-		
+
 		if(this.props.pointing) {
 			componentClass = classNames(componentClass, 'pointing');
 		}
-		
+
 		if(this.props.attached) {
 			componentClass = classNames(componentClass, this.props.attached + ' attached');
 		}
-		
+
 		if(this.props.vertical) {
 			componentClass = classNames(componentClass, 'vertical');
 		}
-		
+
+		if(this.props.align) {
+			componentClass = classNames(componentClass, 'right');
+		}
+
 		return (
 			<div className={componentClass}>
 				{this.props.children}
@@ -50,6 +59,7 @@ Menu.propTypes = {
 	secondary: PropTypes.bool,
 	attached: PropTypes.oneOf(['top', 'bottom']),
 	vertical: PropTypes.bool,
+	align: PropTypes.oneOf(['right']),
 }
 
 Menu.defaultProps = {

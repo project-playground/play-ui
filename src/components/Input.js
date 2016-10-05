@@ -38,6 +38,10 @@ export default class Input extends UIComponent {
 		if(this.props.isContained) {
 			result = <input type={this.props.type} placeholder={this.props.placeholder} defaultValue={this.props.value} />;
 		} else {
+			if(this.props.transparent) {
+				componentClass = classNames(componentClass, 'transparent');
+			}			
+			
 			result = <div className={componentClass}>
 				<input type={this.props.type} placeholder={this.props.placeholder} defaultValue={this.props.value} />
 				{icon}

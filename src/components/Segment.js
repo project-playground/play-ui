@@ -20,6 +20,7 @@ export default class Segment extends UIComponent {
 		let componentClass = this.getClassName();
 		
 		if(this.props.attached) {
+			// default - only attached
 			componentClass = classNames(componentClass, this.props.attached + ' attached');
 		}
 						
@@ -32,7 +33,7 @@ export default class Segment extends UIComponent {
 }
 
 Segment.propTypes = {
-	attached: PropTypes.oneOf(['top', 'bottom']),
+	attached: PropTypes.oneOf(['default', 'top', 'bottom']),
 }
 
 /*
