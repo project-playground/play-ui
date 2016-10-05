@@ -13,7 +13,11 @@ export default class LabeledInputView extends React.Component {
 				
 				<h3>basic</h3>
 				<LabeledInput label="http://" basic="true" />
+
+				<h3>basic</h3>
+				<LabeledInput label="http://" basic="true" />
 				
+
 				<Divider />
 			</div>		
 		);

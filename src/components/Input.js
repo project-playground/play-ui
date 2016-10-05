@@ -21,18 +21,27 @@ export default class Input extends UIComponent {
 		
 		let icon;
 		if(this.props.icon) {
-			if(this.props.iconalign) {
-				componentClass = classNames(componentClass, this.props.iconalign);
+			if(typeof this.props.icon === 'string') {
+				componentClass = classNames(componentClass, 'icon');
+				icon = <i className={classNames('icon', this.props.icon)} />;
+			} else {
+				if(this.props.icon.align) {
+					componentClass = classNames(componentClass, this.props.icon.align);
+				}
+	
+				componentClass = classNames(componentClass, 'icon');
+				icon = <i className={classNames('icon', this.props.icon.icon)} />;
 			}
-
-			componentClass = classNames(componentClass, 'icon');
-			icon = <i className={classNames('icon', this.props.icon)} />;
 		}
 		
 		let result;
 		if(this.props.isContained) {
 			result = <input type={this.props.type} placeholder={this.props.placeholder} defaultValue={this.props.value} />;
 		} else {
+			if(this.props.transparent) {
+				componentClass = classNames(componentClass, 'transparent');
+			}			
+			
 			result = <div className={componentClass}>
 				<input type={this.props.type} placeholder={this.props.placeholder} defaultValue={this.props.value} />
 				{icon}
@@ -43,3 +52,14 @@ export default class Input extends UIComponent {
 	};
 }
 
+Input.propTypes = {
+	value: PropTypes.string,
+	placeholder: PropTypes.string,
+	icon: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.shape({
+			icon: PropTypes.string.isRequired,
+			align: PropTypes.oneOf(['left', 'right']),
+		})
+	])
+}
