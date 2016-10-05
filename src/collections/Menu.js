@@ -43,6 +43,10 @@ export default class Menu extends UIComponent {
 		if(this.props.align) {
 			componentClass = classNames(componentClass, 'right');
 		}
+		
+		if(this.props.inverted) {
+			componentClass = classNames(componentClass, 'inverted');
+		}
 
 		return (
 			<div className={componentClass}>
@@ -60,6 +64,7 @@ Menu.propTypes = {
 	attached: PropTypes.oneOf(['top', 'bottom']),
 	vertical: PropTypes.bool,
 	align: PropTypes.oneOf(['right']),
+	inverted: PropTypes.bool,
 }
 
 Menu.defaultProps = {

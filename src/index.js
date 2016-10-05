@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 import classNames from 'classnames';
+import Menu from './collections/Menu';
+import LinkItem from './collections/LinkItem';
+import DropdownItem from './collections/DropdownItem';
 
 import homeView from './views/HomeView';
 import buttonView from './views/ButtonView';
@@ -52,22 +55,30 @@ export default class Index extends React.Component {
 	render() {
 		return (
 			<div className="ui container">
-				<div className="ui inverted segment">
-					<div className="ui inverted secondary pointing menu">
-						<Link className={this.getMenuActiveState('home')} to="home" onClick={this.handleClick}>Home</Link>
-						<Link className={this.getMenuActiveState('button')} to="button" onClick={this.handleClick}>Button</Link>
-						<Link className={this.getMenuActiveState('label')} to="label" onClick={this.handleClick}>Label</Link>
-						<Link className={this.getMenuActiveState('input')} to="input" onClick={this.handleClick}>Input</Link>
-						<Link className={this.getMenuActiveState('labeledInput')} to="labeledInput" onClick={this.handleClick}>LabeledInput</Link>
-						<Link className={this.getMenuActiveState('divider')} to="divider" onClick={this.handleClick}>Divider</Link>
-						<Link className={this.getMenuActiveState('message')} to="message" onClick={this.handleClick}>Message</Link>
-                        <Link className={this.getMenuActiveState('header')} to="header" onClick={this.handleClick}>Header</Link>
-						<Link className={this.getMenuActiveState('grid')} to="grid" onClick={this.handleClick}>Grid</Link>
-						<Link className={this.getMenuActiveState('menu')} to="menu" onClick={this.handleClick}>Menu</Link>
-						<Link className={this.getMenuActiveState('dropdown')} to="dropdown" onClick={this.handleClick}>Dropdown</Link>
-						<Link className={this.getMenuActiveState('step')} to="step" onClick={this.handleClick}>Step</Link>
-					</div>
-				</div>
+				<Menu inverted={true}>
+					<LinkItem text="Home" to="home" />
+					<DropdownItem text="Components">
+						<LinkItem text="Button" to="button" />
+						<LinkItem text="Label" to="label" />
+						<LinkItem text="Input" to="input" />
+						<LinkItem text="LabeledInput" to="labeledInput" />
+						<LinkItem text="Divider" to="divider" />
+						<LinkItem text="Message" to="message" />
+						<LinkItem text="Header" to="header" />
+					</DropdownItem>
+					<DropdownItem text="Collections">
+						<LinkItem text="Grid" to="grid" />
+						<LinkItem text="Menu" to="menu" />
+						<LinkItem text="Dropdown" to="dropdown" />
+						<LinkItem text="Step" to="step" />
+					</DropdownItem>
+					<DropdownItem text="Modules">
+						<LinkItem text="Dropdown" to="dropdown" />
+					</DropdownItem>
+					<DropdownItem text="Examples">
+						<LinkItem text="HelloWorld" />
+					</DropdownItem>
+				</Menu>
 				
 				{this.props.children}
 			</div>			
@@ -95,3 +106,23 @@ ReactDOM.render(
 	</Router>,
 	document.getElementById('root')
 );
+
+/*
+				<div className="ui inverted segment">
+					<div className="ui inverted secondary pointing menu">
+						<Link className={this.getMenuActiveState('home')} to="home" onClick={this.handleClick}>Home</Link>
+						<Link className={this.getMenuActiveState('button')} to="button" onClick={this.handleClick}>Button</Link>
+						<Link className={this.getMenuActiveState('label')} to="label" onClick={this.handleClick}>Label</Link>
+						<Link className={this.getMenuActiveState('input')} to="input" onClick={this.handleClick}>Input</Link>
+						<Link className={this.getMenuActiveState('labeledInput')} to="labeledInput" onClick={this.handleClick}>LabeledInput</Link>
+						<Link className={this.getMenuActiveState('divider')} to="divider" onClick={this.handleClick}>Divider</Link>
+						<Link className={this.getMenuActiveState('message')} to="message" onClick={this.handleClick}>Message</Link>
+                        <Link className={this.getMenuActiveState('header')} to="header" onClick={this.handleClick}>Header</Link>
+						<Link className={this.getMenuActiveState('grid')} to="grid" onClick={this.handleClick}>Grid</Link>
+						<Link className={this.getMenuActiveState('menu')} to="menu" onClick={this.handleClick}>Menu</Link>
+						<Link className={this.getMenuActiveState('dropdown')} to="dropdown" onClick={this.handleClick}>Dropdown</Link>
+						<Link className={this.getMenuActiveState('step')} to="step" onClick={this.handleClick}>Step</Link>
+					</div>
+				</div>
+
+*/

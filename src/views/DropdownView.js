@@ -13,9 +13,9 @@ export default class DropdownView extends React.Component {
 	render() {
 		return (
 			<div>
-				<Header type="h2" text="Dropdown" />
+				<Header size={2} text="Dropdown" />
 
-				<Header type="h3" text="Dropdown" />
+				<Header size={3} text="Dropdown" />
 				<Dropdown text="HelloWorld">
 					<Item text="Menu1" description="ctrl + 1" />
 					<Item text="Menu2" description="ctrl + 2" />
@@ -28,7 +28,7 @@ export default class DropdownView extends React.Component {
 					</DropdownItem>
 				</Dropdown>
 
-				<Header type="h3" text="Selection" />
+				<Header size={3} text="Selection" />
 				<Dropdown type="selection">
 					<Item text="Menu1" />
 					<Item text="Menu2" />

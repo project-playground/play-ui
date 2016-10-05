@@ -53,7 +53,7 @@ export default class Dropdown extends UIComponent {
 
 Dropdown.propTypes = {
 	type: PropTypes.oneOf(['default', 'selection']),
-	text: PropTypes.string.isRequired,
+	text: PropTypes.string,
 }
 
 Dropdown.defaultProps = {

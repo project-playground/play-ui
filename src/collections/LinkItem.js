@@ -1,16 +1,27 @@
 // MenuItem.js
-import React, { Component, PropTypes  } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import Item from '../collections/Item';
 import classNames from 'classnames';
 
 export default class LinkItem extends Item {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			'to': this.props.to
+		};
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	getClassName() {
 		return super.getClassName();
+	}
+	
+	handleClick(event) {
+		if(!this.state.to) {
+			event.preventDefault();
+			return false;
+		}
 	}
 
 	render() {
@@ -26,11 +37,11 @@ export default class LinkItem extends Item {
 		}
 
 		return (
-			<a className={componentClass}>
+			<Link className={componentClass} to={this.props.to} onClick={this.handleClick}>
 				{icon}
 				{this.props.text}
 				{this.props.children}
-			</a>
+			</Link>
 		);
 	};
 }
@@ -38,7 +49,12 @@ export default class LinkItem extends Item {
 
 LinkItem.propTypes = {
 	state: PropTypes.oneOf(['active']),
-	icon: PropTypes.string
+	icon: PropTypes.string,
+	to: PropTypes.string.isRequired,
+}
+
+LinkItem.defaultProps = {
+	to: ''
 }
 /*
 MenuItem.defaultProps = {

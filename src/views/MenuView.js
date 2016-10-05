@@ -15,22 +15,22 @@ export default class MenuView extends React.Component {
 
 		return (
 			<div>
-				<Header type="h2" text="Menu"/>
-				<Header type="h3" text="Menu"/>
+				<Header size={2} text="Menu"/>
+				<Header size={3} text="Menu"/>
 				<Menu>
 					<LinkItem text="Home" state="active" />
 					<LinkItem text="Edit" />
 					<LinkItem text="View" />
 				</Menu>
 
-				<Header type="h3" text="Pointing"/>
+				<Header size={3} text="Pointing"/>
 				<Menu pointing={true}>
 					<LinkItem text="Home" state="active" />
 					<LinkItem text="Edit" />
 					<LinkItem text="View" />
 				</Menu>
 
-				<Header type="h3" text="Secondary"/>
+				<Header size={3} text="Secondary"/>
 				<Menu type="secondary">
 					<LinkItem text="Home" state="active" />
 					<LinkItem text="Edit" />
@@ -206,14 +206,6 @@ export default class MenuView extends React.Component {
 					</DropdownItem>
 				</Menu>
 
-				<h3>Dropdown Menu</h3>
-				<h3>Dropdown Menu</h3>
-				<h3>Dropdown Menu</h3>
-				<h3>Dropdown Menu</h3>
-				<h3>Dropdown Menu</h3>
-				<h3>Dropdown Menu</h3>
-				<h3>Dropdown Menu</h3>
-				<h3>Dropdown Menu</h3>
 			</div>
 		);
 	}
