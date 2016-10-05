@@ -12,16 +12,16 @@ export default class ButtonView extends React.Component {
 				<h2>Button</h2>
 				<h3>Button</h3>
 				<Button text="HelloWorld" />
-				
+
 				<h3>Icon</h3>
 				<Button text="HelloWorld" icon="star" />
 				<Button icon="cloud" />
-				
+
 				<h3>State</h3>
 				<Button text="Active" icon="star" state="active" />
 				<Button text="Disabled" icon="star" state="disabled" />
 				<Button text="Active" icon="star" state="loading" />
-				
+
 				<h3>Size</h3>
 				<Button text="Mini" size="mini" />
 				<Button text="Tiny" size="tiny" />
@@ -31,11 +31,11 @@ export default class ButtonView extends React.Component {
 				<Button text="Big" size="big" />
 				<Button text="Huge" size="huge" />
 				<Button text="Massive" size="massive" />
-				
+
 				<h3>Basic</h3>
 				<Button text="Default" />
 				<Button text="Basic" basic={true} />
-				
+
 				<h3>Colored</h3>
 				<Button text="Primary" colored="primary" />
 				<Button text="Secondary" colored="secondary" />
@@ -52,7 +52,7 @@ export default class ButtonView extends React.Component {
 				<Button text="Pink" colored="pink" />
 				<Button text="Grey" colored="grey" />
 				<Button text="Black" colored="black" />
-				
+
 				<h3>Basic + Colored</h3>
 				<Button text="Primary" basic={true} colored="primary" />
 				<Button text="Secondary" basic={true} colored="secondary" />
@@ -72,9 +72,9 @@ export default class ButtonView extends React.Component {
 
 				<h3>Compact</h3>
 				<Button text="Compact" compact={true} />
-				
+
 				<Divider />
-			
+
 				<h2>Buttons</h2>
 				<h3>Basic</h3>
 				<Buttons>
@@ -82,7 +82,7 @@ export default class ButtonView extends React.Component {
 					<Button text="World" />
 					<Button text="Playground" />
 				</Buttons>
-				
+
 				<h3>Icon Buttons</h3>
 				<Buttons icon={true}>
 					<Button icon="align left" />
@@ -95,20 +95,20 @@ export default class ButtonView extends React.Component {
 					<Button icon="underline" />
 					<Button icon="text width" />
 				</Buttons>
-				
+
 				<h3>Vertical</h3>
 				<Buttons vertical={true}>
 					<Button text="Hello" />
 					<Button text="World" />
 					<Button text="Playground" />
 				</Buttons>
-				
+
 				<h3>Conditional</h3>
 				<Buttons condition="or">
 					<Button text="Yes" colored="primary" />
 					<Button text="No" />
 				</Buttons>
-				
+
 				<h3>Equal Width</h3>
 				<Buttons equalwidth={true}>
 					<Button text="one" />
@@ -127,21 +127,21 @@ export default class ButtonView extends React.Component {
 					<Button text="nine" />
 					<Button text="ten" />
 				</Buttons>
-				
+
 				<h3>Colored Buttons</h3>
 				<Buttons colored="blue">
 					<Button text="one" />
 					<Button text="two" />
 					<Button text="three" />
 				</Buttons>
-				
+
 				<Divider />
-				
+
 				<h2>LabeledButton</h2>
-				<LabeledButton text="Like" label="2,050" icon="heart" />	
-				
+				<LabeledButton text="Like" label="2,050" icon="heart" />
+
 				<Divider />
-			</div>		
+			</div>
 		);
 	}
 }
