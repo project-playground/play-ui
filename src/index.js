@@ -82,7 +82,7 @@ export default class Index extends React.Component {
 
 				{this.props.children}
 			</div>
-		)
+		);
 	}
 }
 
