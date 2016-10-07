@@ -29,7 +29,7 @@ export default class Index extends React.Component {
 		this.handleClick = this.handleClick.bind(this);
 		this.getMenuActiveState = this.getMenuActiveState.bind(this);
 	}
-	
+
 	componentWillMount() {
 		this.changeLocation();
 	}
@@ -39,11 +39,11 @@ export default class Index extends React.Component {
 		const currentView = path[path.length - 1];
 		this.setState({ currentView });
 	}
-	
+
 	handleClick(event) {
 		this.setState({ currentView: event.target.getAttribute('href') });
 	}
-	
+
 	getMenuActiveState(link) {
 		let classes = 'item';
 		if(this.state.currentView === link) {
@@ -51,12 +51,12 @@ export default class Index extends React.Component {
 		}
 		return classes;
 	}
-	
+
 	render() {
 		return (
 			<div className="ui container">
 				<Menu inverted={true}>
-					<LinkItem text="Home" to="home" />
+					<LinkItem text="Home" to="home" icon="home" />
 					<DropdownItem text="Components">
 						<LinkItem text="Button" to="button" />
 						<LinkItem text="Label" to="label" />
@@ -79,10 +79,10 @@ export default class Index extends React.Component {
 						<LinkItem text="HelloWorld" />
 					</DropdownItem>
 				</Menu>
-				
+
 				{this.props.children}
-			</div>			
-		)
+			</div>
+		);
 	}
 }
 

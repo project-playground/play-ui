@@ -1,6 +1,8 @@
 // Item.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from '../components/UIComponent';
+import Icon from '../components/Icon';
+import Flag from '../components/Flag';
 import classNames from 'classnames';
 
 const CLASSNAME = 'item';
@@ -24,7 +26,10 @@ export default class Item extends UIComponent {
 
 		let icon;
 		if(this.props.icon) {
-			icon = <i className={classNames(this.props.icon, 'icon')} />;
+			if(this.props.icon.indexOf('flag') > 0)
+				icon = <Flag icon={this.props.icon} />;
+			else
+				icon = <Icon icon={this.props.icon} />;
 		}
 
 		let description;
@@ -32,23 +37,30 @@ export default class Item extends UIComponent {
 			description = <span className="description">{this.props.description}</span>;
 		}
 
+		let image;
+		if(this.props.imgSrc) {
+			image = <img className="ui mini avatar image" src={this.props.imgSrc} />;
+		}
+
 		return (
-			<div className={componentClass}>
+			<div className={componentClass} data-value={this.props.value}>
 				{icon}
 				{description}
+				{image}
 				{this.props.text}
 				{this.props.children}
 			</div>
 		);
-	};
+	}
 }
 
 Item.propTypes = {
 	text: PropTypes.string,
 	header: PropTypes.string,
 	icon: PropTypes.string,
-	description: PropTypes.string
-}
+	description: PropTypes.string,
+	value: PropTypes.string,
+};
 
 /*
 Item.defaultProps = {

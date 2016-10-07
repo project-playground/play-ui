@@ -1,6 +1,7 @@
 // Dropdown.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from '../components/UIComponent';
+import Icon from '../components/Icon';
 
 import Item from '../collections/Item';
 import dropdown from 'semantic-ui-css/components/dropdown.min.css';
@@ -10,7 +11,7 @@ const CLASSNAME = 'dropdown';
 
 export default class Dropdown extends UIComponent {
 	constructor(props) {
-		super(props); 
+		super(props);
 	}
 
 	getClassName() {
@@ -26,39 +27,60 @@ export default class Dropdown extends UIComponent {
 				console.log('Not Item!!!!!', child.type);
 			}
 		});
-	};
-	
+	}
+
 	componentDidMount() {
 		$('.ui.dropdown').dropdown();
 	}
 
 	render() {
 		let componentClass = this.getClassName();
-		
+		let textClass = 'text';
+
+		let dataInput;
 		if(this.props.type && this.props.type !== 'default') {
 			componentClass = classNames(componentClass, this.props.type);
+			if(!this.props.name)
+				throw new Error('name is required at selection type in dropdown');
+
+			textClass = classNames(textClass, 'default');
+			dataInput = <input type="hidden" name={this.props.name} />;
 		}
-						
+
+		let search;
+		if(this.props.search) {
+			componentClass = classNames(componentClass, 'search');
+		}
+
+		let multiple;
+		if(this.props.multiple) {
+			componentClass = classNames(componentClass, 'multiple');
+		}
+
 		return (
 			<div className={componentClass}>
-				<div className="text">{this.props.text}</div>
-				<i className="dropdown icon"></i>
+				{dataInput}
+				<div className={textClass}>{this.props.text}</div>
+				<Icon icon="dropdown"/>
 				<div className="menu">
 					{this.props.children}
 				</div>
 			</div>
-		)
-	};
+		);
+	}
 }
 
 Dropdown.propTypes = {
 	type: PropTypes.oneOf(['default', 'selection']),
+	name: PropTypes.string,
 	text: PropTypes.string,
-}
+	search: PropTypes.bool,
+	multiple: PropTypes.bool,
+};
 
 Dropdown.defaultProps = {
 	type: 'default',
-}
+};
 /*
 			<div className={componentClass}>
 				<div className="text">{this.props.text}</div>
@@ -102,5 +124,5 @@ Dropdown.defaultProps = {
 					</div>
 					<div className="item">E-mail Collaborators</div>
 				</div>
-			</div>	
+			</div>
 */
