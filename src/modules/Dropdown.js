@@ -1,6 +1,7 @@
 // Dropdown.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from '../components/UIComponent';
+import Icon from '../components/Icon';
 
 import Item from '../collections/Item';
 import dropdown from 'semantic-ui-css/components/dropdown.min.css';
@@ -60,7 +61,7 @@ export default class Dropdown extends UIComponent {
 			<div className={componentClass}>
 				{dataInput}
 				<div className={textClass}>{this.props.text}</div>
-				<i className="dropdown icon"></i>
+				<Icon icon="dropdown"/>
 				<div className="menu">
 					{this.props.children}
 				</div>

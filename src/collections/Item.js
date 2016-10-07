@@ -1,6 +1,8 @@
 // Item.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from '../components/UIComponent';
+import Icon from '../components/Icon';
+import Flag from '../components/Flag';
 import classNames from 'classnames';
 
 const CLASSNAME = 'item';
@@ -25,9 +27,9 @@ export default class Item extends UIComponent {
 		let icon;
 		if(this.props.icon) {
 			if(this.props.icon.indexOf('flag') > 0)
-				icon = <i className={classNames(this.props.icon, '')} />;
+				icon = <Flag icon={this.props.icon} />;
 			else
-				icon = <i className={classNames(this.props.icon, 'icon')} />;
+				icon = <Icon icon={this.props.icon} />;
 		}
 
 		let description;
