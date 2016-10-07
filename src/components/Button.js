@@ -23,10 +23,13 @@ export default class Button extends UIComponent {
 		if(this.props.icon) {
 			let iconClass = classNames('icon', this.props.icon);
 			iconButton = <i className={iconClass} />
+			if(!this.props.text) {
+				componentClass = classNames(componentClass, 'icon');
+			}
 		}
 
-		if(this.props.emphasis) {
-			componentClass = classNames(componentClass, this.props.emphasis);
+		if(this.props.basic) {
+			componentClass = classNames(componentClass, 'basic');
 		}
 		
 		if(this.props.size) {
@@ -34,8 +37,9 @@ export default class Button extends UIComponent {
 			componentClass = classNames(componentClass, this.props.size);
 		}
 		
-		if(this.props.disabled) {
-			componentClass = classNames(componentClass, 'disabled');
+		if(this.props.state) {
+			// TODO state check
+			componentClass = classNames(componentClass, this.props.state);
 		}
 		
 		if(this.props.colored) {
@@ -57,3 +61,12 @@ export default class Button extends UIComponent {
 	};
 }
 
+Button.propTypes = {
+	text: PropTypes.string,
+	icon: PropTypes.string,
+	state: PropTypes.oneOf(['active', 'disabled', 'loading']),
+	size: PropTypes.oneOf(['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive']),
+	basic: PropTypes.bool,
+	colored: PropTypes.oneOf(['primary', 'secondary', 'red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'brown', 'pink', 'grey', 'black']),
+	compact: PropTypes.bool
+}
