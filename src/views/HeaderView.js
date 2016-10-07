@@ -18,8 +18,8 @@ export default class HeaderView extends React.Component {
         <Header size={2} text="Sub Header 2" sub="sub" />
         <Header size={3} text="Sub Header 3" sub="sub" />
         <Header size={1} text="Sub Icon Header" sub={true} icon="settings" />
-        <Header size={1} text="Img Header" img="/src/images/school.png" />
-        <Header size={1} text="Img Header" img="/src/images/school.png" circular='circular' />
+        <Header size={1} text="Img Header" img="/assets/images/school.png" />
+        <Header size={1} text="Img Header" img="/assets/images/school.png" circular='circular' />
 
         <Header size={1} text="Content Icon Header" contentIcon="plug" />
         <Header size={1} text="Sub Content Icon Header" contentIcon="settings" subHeader="Content Icon SubText" />
@@ -35,7 +35,7 @@ export default class HeaderView extends React.Component {
 
         <Header size={1} text="Divide Header" divide="divide" />Test Divide Contents String
         <Header size={1} text="Divide Header" divide={true} />Test Divide Contents Boolean
-        
+
         <Header size={1} text="Divide Header" block="block" />
         <Header size={1} text="Divide Header" block={true} />
 
