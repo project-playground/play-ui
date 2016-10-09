@@ -1,6 +1,7 @@
 // Message.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from './UIComponent';
+import Icon from './Icon';
 import message from 'semantic-ui-css/components/message.css';
 import classNames from 'classnames';
 
@@ -28,55 +29,53 @@ export default class Message extends UIComponent {
 		if(this.props.text) {
 			text = <p>{this.props.text}</p>
 		}
-		
+
 		let icon;
-		let iconClass;
 		let content;
 		if(this.props.icon) {
-			iconClass = classNames(this.props.icon, "icon");
 			componentClass = classNames(componentClass, "icon");
-			icon = <i className={iconClass}></i>
-			
+			icon = <Icon icon={this.props.icon} />
+
 			content = <div className="content">{header}{text}</div>
-			
+
 		} else {
 			content = <span>{header}{text}</span>;
 		}
-		
+
 		if(this.props.close) {
 			close = <i className="close icon"></i>
 		}
-		
+
 		if(this.props.hidden) {
 			componentClass = classNames(componentClass, "hidden");
 		}
-		
+
 		if(this.props.visible) {
 			componentClass = classNames(componentClass, "visible");
 		}
 		{/*priority hidden > visible*/}
-		
+
 		if(this.props.floating) {
 			componentClass = classNames(componentClass, "floating");
 		}
-		
+
 		if(this.props.compact) {
 			componentClass = classNames(componentClass, "compact");
 		}
-		
+
 		if(this.props.level) {
 			componentClass = classNames(componentClass, this.props.level)
 		}
-		
+
 		if(this.props.colored) {
 			componentClass = classNames(componentClass, this.props.colored)
 		}
 		{/*colored > level priority*/}
-		
+
 		if(this.props.size) {
 			componentClass = classNames(componentClass, this.props.size)
 		}
-						
+
 		return (
 			<div className={componentClass}>
 				{icon}

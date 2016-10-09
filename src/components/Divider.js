@@ -1,6 +1,7 @@
 // Divider.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from './UIComponent';
+import Icon from './Icon';
 import classNames from 'classnames';
 
 const CLASSNAME = 'divider';
@@ -17,25 +18,25 @@ export default class Divider extends UIComponent {
 
 	render() {
 		let componentClass = this.getClassName();
-		
+
 		if(this.props.type) {
 			if(this.props.type === 'horizontal' && this.props.header) {
 				componentClass = classNames(componentClass, this.props.type);
 			}
 		}
-		
+
 		if(this.props.hidden) {
 			componentClass = classNames(componentClass, 'hidden');
 		}
-		
+
 		if(this.props.fitted) {
 			componentClass = classNames(componentClass, 'fitted');
 		}
-		
+
 		if(this.props.section) {
 			componentClass = classNames(componentClass, 'section');
 		}
-		
+
 		let result;
 		if(this.props.header) {
 			componentClass = classNames(componentClass, 'header');
@@ -46,14 +47,14 @@ export default class Divider extends UIComponent {
 			} else {
 				title = this.props.header.title;
 				if(this.props.header.icon) {
-					icon = <i className={classNames('icon', this.props.header.icon)} />;
+					icon = <Icon icon={this.props.header.icon} />;
 				}
 			}
 			result = <h4 className={componentClass}>{icon}{title}</h4>;
 		} else {
 			result = <div className={componentClass}></div>
 		}
-		
+
 		return result;
 	};
 }

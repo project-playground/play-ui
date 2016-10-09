@@ -13,16 +13,16 @@ export default class Icon extends UIComponent {
 	}
 
 	getClassName() {
-		return classNames(super.getClassName(), CLASSNAME);
+		return CLASSNAME;
 	}
 
 	render() {
 		let componentClass = this.getClassName();
-		
+
 		if(this.props.icon) {
 			componentClass = classNames(componentClass, this.props.icon);
 		}
-		
+
 		return (
 			<i className={componentClass}></i>
 		);
@@ -31,5 +31,5 @@ export default class Icon extends UIComponent {
 
 Icon.propTypes = {
 	icon: PropTypes.string,
+	floated: PropTypes.oneOf(['right']),
 }
-
