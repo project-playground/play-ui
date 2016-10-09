@@ -3,6 +3,7 @@ import React, { Component, PropTypes  } from 'react';
 import UIComponent from '../components/UIComponent';
 import Icon from '../components/Icon';
 import Flag from '../components/Flag';
+import Content from '../components/Content';
 import classNames from 'classnames';
 
 const CLASSNAME = 'item';
@@ -42,20 +43,39 @@ export default class Item extends UIComponent {
 			image = <img className="ui mini avatar image" src={this.props.imgSrc} />;
 		}
 
-		return (
-			<div className={componentClass} data-value={this.props.value}>
+		let itemRender;
+		if(typeof(this.props.text) == 'string') {
+			itemRender = <div className={componentClass} data-value={this.props.value}>
 				{icon}
-				{description}
 				{image}
 				{this.props.text}
+				{description}
 				{this.props.children}
-			</div>
-		);
+			</div>;
+		} else {
+			itemRender = <div className={componentClass} data-value={this.props.value}>
+				{icon}
+				{image}
+				<Content>
+						<div className="header">{this.props.text.header}</div>
+						<div className="description">{this.props.text.description}</div>
+						{this.props.children}
+				</Content>
+			</div>;
+		}
+
+		return itemRender;
 	}
 }
 
 Item.propTypes = {
-	text: PropTypes.string,
+	text: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.shape({
+			header: PropTypes.string.isRequired,
+			description: PropTypes.string
+		})
+	]),
 	header: PropTypes.string,
 	icon: PropTypes.string,
 	description: PropTypes.string,
