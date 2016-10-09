@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 import classNames from 'classnames';
 import Menu from './collections/Menu';
+import Item from './collections/Item';
 import LinkItem from './collections/LinkItem';
 import DropdownItem from './collections/DropdownItem';
 
@@ -78,6 +79,9 @@ export default class Index extends React.Component {
 					<DropdownItem text="Examples">
 						<LinkItem text="HelloWorld" />
 					</DropdownItem>
+					<Menu sub={true} align="right">
+						<Item text="play-ui" icon="leaf"/>
+					</Menu>
 				</Menu>
 
 				{this.props.children}
