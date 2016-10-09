@@ -1,7 +1,8 @@
 // MenuItem.js
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import Item from '../collections/Item';
+import Item from './Item';
+import Icon from '../components/Icon';
 import classNames from 'classnames';
 
 export default class LinkItem extends Item {
@@ -16,7 +17,7 @@ export default class LinkItem extends Item {
 	getClassName() {
 		return super.getClassName();
 	}
-	
+
 	handleClick(event) {
 		if(!this.state.to) {
 			event.preventDefault();
@@ -33,7 +34,7 @@ export default class LinkItem extends Item {
 
 		let icon;
 		if(this.props.icon) {
-			icon = <i className={classNames(this.props.icon, 'icon')} />;
+			icon = <Icon icon={this.props.icon} />;
 		}
 
 		return (
