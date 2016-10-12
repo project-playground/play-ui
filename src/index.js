@@ -19,6 +19,7 @@ import menuView from './views/MenuView';
 import headerView from './views/HeaderView';
 import stepView from './views/StepView';
 import dropdownView from './views/DropdownView';
+import loaderView from './views/LoaderView';
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -66,6 +67,7 @@ export default class Index extends React.Component {
 						<LinkItem text="Divider" to="divider" />
 						<LinkItem text="Message" to="message" />
 						<LinkItem text="Header" to="header" />
+						<LinkItem text="Loader" to="loader" />
 					</DropdownItem>
 					<DropdownItem text="Collections">
 						<LinkItem text="Grid" to="grid" />
@@ -106,6 +108,7 @@ ReactDOM.render(
 			<Route path="menu" component={menuView} />
 			<Route path="dropdown" component={dropdownView} />
 			<Route path="step" component={stepView} />
+			<Route path="loader" component={loaderView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
