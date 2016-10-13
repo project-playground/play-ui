@@ -20,6 +20,8 @@ import headerView from './views/HeaderView';
 import stepView from './views/StepView';
 import dropdownView from './views/DropdownView';
 
+import themingView from './views/ThemingView';
+
 export default class Index extends React.Component {
 	constructor(props) {
 		super(props);
@@ -77,7 +79,7 @@ export default class Index extends React.Component {
 						<LinkItem text="Dropdown" to="dropdown" />
 					</DropdownItem>
 					<DropdownItem text="Examples">
-						<LinkItem text="HelloWorld" />
+						<LinkItem text="Theming" to="theming" />
 					</DropdownItem>
 					<Menu sub={true} align="right">
 						<Item text="play-ui" icon="leaf"/>
@@ -106,6 +108,8 @@ ReactDOM.render(
 			<Route path="menu" component={menuView} />
 			<Route path="dropdown" component={dropdownView} />
 			<Route path="step" component={stepView} />
+
+			<Route path="theming" component={themingView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
