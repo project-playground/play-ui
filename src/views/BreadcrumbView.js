@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Label from '../components/Breadcrumb';
+import Breadcrumb from '../components/Breadcrumb';
 
 export default class BreadcrumbView extends React.Component {
 	render() {

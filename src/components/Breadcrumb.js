@@ -20,6 +20,7 @@ export default class Breadcrumb extends UIComponent {
 		let componentClass = this.getClassName();
 		let sections;
 		
+		/*
 		if(this.props.children.length > 0) {
 			let sectionClass = 'section';
 			let sectionCnt = this.props.children.length;
@@ -38,6 +39,7 @@ export default class Breadcrumb extends UIComponent {
 				}
 			});
 		}
+		*/
 
 		if(this.props.size) {
 			componentClass = classNames(componentClass, this.props.size);
