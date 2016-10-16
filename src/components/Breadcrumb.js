@@ -20,13 +20,23 @@ export default class Breadcrumb extends UIComponent {
 		let componentClass = this.getClassName();
 		let sections;
 		
-
-		if(this.props.section.length>0) {
+		if(this.props.children.length > 0) {
 			let sectionClass = 'section';
-			if(this.props.section.active) {
-				sectionClass = classNames(sectionClass, 'active');
-			}
-			sections.push('<div class="'+sectionClass+'">'+this.props.sections[i].to+'</div>');
+			let sectionCnt = this.props.children.length;
+			
+			this.props.children.map((ele, idx) => {
+				if (sectionCnt == idx-1) {
+					sections += ele.addClass('active');
+				} else {
+					sections += ele;
+					if (this.props.divider.type == 'icon') {
+						sections += '<i class="divider '+this.props.divider.text+'"></i>';
+					} else {
+						sections += '<div class="divider">'+this.props.divider.text+'</div>';
+					}
+					
+				}
+			});
 		}
 
 		if(this.props.size) {
@@ -35,22 +45,17 @@ export default class Breadcrumb extends UIComponent {
 		
 		return (
 			<div className={componentClass}>
-				{this.props.section}
-				{this.props.divider}
+				{sections}
 			</div>
 		)
 	};
 }
 
 Breadcrumb.propTypes = {
-	section: PropTypes.shape([{
-		to: PropTypes.string.isRequried,
-		active: PropTypes.bool
-	}]),
-	divider: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.icon
-	]),
+	divider: PropTypes.oneOfType(
+		type: PropTypes.oneOf(['icon', 'text']),
+		text: PropTypes.string
+	),
 	size: PropTypes.oneOf(['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive'])
 }
 
