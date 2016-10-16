@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Label from '../components/Breadcrumb';
+
 export default class BreadcrumbView extends React.Component {
 	render() {
 		let dividerObj = {
