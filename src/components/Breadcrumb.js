@@ -26,7 +26,7 @@ export default class Breadcrumb extends UIComponent {
 			
 			this.props.children.map((ele, idx) => {
 				if (sectionCnt == idx-1) {
-					sections += ele.addClass('active');
+					//sections += ele.addClass('active');
 				} else {
 					sections += ele;
 					if (this.props.divider.type == 'icon') {
