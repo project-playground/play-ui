@@ -15,7 +15,50 @@ export default class LoaderView extends React.Component {
         <p>test</p>
         <input type="text" />
       </Loader>
-
+      
+      <h3>Loader</h3>
+      <Loader overLap={true} />
+      
+      <h3>text Loader</h3>
+      <Loader overLap={true} text="Loading" />
+      
+      <h3>text invered Loader</h3>
+      <Loader overLap={true} text="Loadning" inverted={true} />
+      
+      <h3>indeterminate Loader</h3>
+      <Loader overLap={true} text="Preparing Files" state="indeterminate" />
+      
+      <h3>no child active Loader</h3>
+      <Loader overLap={false} state="active" />
+      
+      <h3>no child disalbed Loader</h3>
+      <Loader overLap={false} state="disabled" />
+      
+      <h3>inline Loader</h3>
+      <Loader overLap={true} inline={true} />
+      
+      <h3>nochild inline Loader</h3>
+      <Loader overLap={false} state="active" inline={true} />
+      
+      <h3>inline center Loader</h3>
+      <Loader overLap={true} inlineCenter={true} />
+      
+      <h3>nochild inline center Loader</h3>
+      <Loader overLap={false} state="active" inlineCenter={true} />
+      
+      <h3>size Loader</h3>
+      <Loader overLap={true} size="mini" text="mini"/>
+      <Loader overLap={true} size="tiny" text="tiny"/>
+      <Loader overLap={true} size="small" text="small"/>
+      <Loader overLap={true} size="medium" text="medium"/>
+      <Loader overLap={true} size="large" text="large"/>
+      
+      <h3>no child inverted Loader</h3>
+      <Loader overLap={false} state="active" inverted={true} />
+      
+      <h3>inverted Loader</h3>
+      <Loader overLap={true} inverted={true} />
+      {/*
       <h3>Simple no child Loader</h3>
       <Loader overLap={true} state="active" text="loading" />
 
@@ -170,6 +213,7 @@ export default class LoaderView extends React.Component {
             <input type="text" />
             <div className="ui active inverted massive loader"></div>
           </div>
+          */}
       </div>
 		);
 	}

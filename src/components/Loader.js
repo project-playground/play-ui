@@ -1,4 +1,4 @@
-// Form.js
+// Loader.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from './UIComponent';
 import loader from 'semantic-ui-css/components/loader.css';
@@ -18,7 +18,8 @@ export default class Loader extends UIComponent {
 
 	render() {
 		let componentClass = this.getClassName();
-    let loaderContent;
+		let loaderClass = classNames(super.getClassName(), "segment"); 
+	    let loaderContent;
     let overLap;
     let overLapClass = classNames(super.getClassName(), "active dimmer");
 
@@ -30,7 +31,7 @@ export default class Loader extends UIComponent {
     if(this.props.overLap) {
 
       if(this.props.inverted) {
-        overLapClass = classNames(overLapClass, this.props.inverted);
+        overLapClass = classNames(super.getClassName(), "active inverted dimmer");
       }
 
       if(this.props.state) {
@@ -46,13 +47,23 @@ export default class Loader extends UIComponent {
       }
 
       if(this.props.inlineCenter) {
-        componentClass = classNames(componentClass, "inline centered");
+        componentClass = classNames(componentClass, "active centered inline");
       }
 
       loaderContent = <div className={overLapClass}><div className={componentClass}>{textLoader}</div></div>
 
     } else {
-
+    	
+      if(this.props.inverted) {
+      	componentClass = classNames(componentClass, "inverted");
+      	loaderClass = classNames(loaderClass, "inverted");
+      }
+      
+      if(this.props.dimmer) {
+      	componentClass = classNames(this.getClassName());
+      	loaderClass = classNames(super.getClassName(), "segment"); 
+      }
+      
       if(this.props.state) {
         componentClass = classNames(componentClass, this.props.state);
       }
@@ -74,7 +85,7 @@ export default class Loader extends UIComponent {
     }
 
 		return (
-			<div className="ui segment">
+			<div className={loaderClass}>
         {loaderContent}
         {this.props.children}
 			</div>
