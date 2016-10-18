@@ -23,6 +23,8 @@ import breadcrumbView from './views/BreadcrumbView';
 
 import themingView from './views/ThemingView';
 
+import themingView from './views/ThemingView';
+
 export default class Index extends React.Component {
 	constructor(props) {
 		super(props);
@@ -110,7 +112,10 @@ ReactDOM.render(
 			<Route path="menu" component={menuView} />
 			<Route path="dropdown" component={dropdownView} />
 			<Route path="step" component={stepView} />
+<<<<<<< HEAD
 			<Route path="breadcrumb" component={breadcrumbView} />
+=======
+>>>>>>> origin/0.4.0
 
 			<Route path="theming" component={themingView} />
 		</Route>
