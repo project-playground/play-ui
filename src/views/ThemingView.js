@@ -21,13 +21,16 @@ export default class ThemingView extends React.Component {
 						<Header size={5} text="Heading 5" />
 					</Column>
 					<Column>
-						2
+						<Header size={2} text="Example body text" />
 					</Column>
 					<Column>
-						<Grid column={3} stackable={true} padded={true} valign="middle" centered={true}>
+						<Grid column={3} stackable={true} padded={true} valign="middle" centered={true} aligned={true}>
 							<Column colored="red">Red</Column>
 							<Column colored="orange">Orange</Column>
 							<Column colored="yellow">Yellow</Column>
+							<Column colored="olive">Olive</Column>
+							<Column colored="blue">Blue</Column>
+							<Column colored="violet">Violet</Column>
 						</Grid>
 					</Column>
 				</Grid>
