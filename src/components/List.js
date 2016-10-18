@@ -63,6 +63,10 @@ export default class List extends UIComponent {
 		if(this.props.floated) {
 			listClass = classNames(listClass, this.props.floated);
 		}
+		
+		if(this.props.childlist) {
+			listClass = 'list';
+		}
 
 		return (
 			<div className={listClass}>
@@ -79,6 +83,7 @@ List.propTypes = {
 	link: PropTypes.bool,
 	selection: PropTypes.bool,
 	animated: PropTypes.bool,
+	childlist: PropTypes.bool,
 	divided: PropTypes.oneOf(['divided', 'celled']),
 	relaxed: PropTypes.oneOf(['relaxed', 'very relaxed']),
 	size: PropTypes.oneOf(['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive']),
