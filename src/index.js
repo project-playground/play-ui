@@ -20,6 +20,7 @@ import headerView from './views/HeaderView';
 import stepView from './views/StepView';
 import dropdownView from './views/DropdownView';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import imageView from './views/ImageView';
 
 import modalView from './views/ModalView';
@@ -30,6 +31,10 @@ import themingView from './views/ThemingView';
 
 import themingView from './views/ThemingView';
 >>>>>>> origin/0.4.0
+=======
+import loaderView from './views/LoaderView';
+import listView from './views/ListView';
+>>>>>>> 0.4.0-gyunsu
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -77,7 +82,12 @@ export default class Index extends React.Component {
 						<LinkItem text="Divider" to="divider" />
 						<LinkItem text="Message" to="message" />
 						<LinkItem text="Header" to="header" />
+<<<<<<< HEAD
 						<LinkItem text="Image" to="image" />
+=======
+						<LinkItem text="Loader" to="loader" />
+						<LinkItem text="List" to="list" />
+>>>>>>> 0.4.0-gyunsu
 					</DropdownItem>
 					<DropdownItem text="Collections">
 						<LinkItem text="Grid" to="grid" />
@@ -121,6 +131,7 @@ ReactDOM.render(
 			<Route path="dropdown" component={dropdownView} />
 			<Route path="step" component={stepView} />
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<Route path="image" component={imageView} />
 			<Route path="modal" component={modalView} />
 =======
@@ -131,6 +142,10 @@ ReactDOM.render(
 
 			<Route path="theming" component={themingView} />
 >>>>>>> origin/0.4.0
+=======
+			<Route path="loader" component={loaderView} />
+			<Route path="list" component={listView} />
+>>>>>>> 0.4.0-gyunsu
 		</Route>
 	</Router>,
 	document.getElementById('root')

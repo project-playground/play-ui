@@ -44,7 +44,15 @@ export default class Item extends UIComponent {
 		}
 
 		let itemRender;
-		if(typeof(this.props.text) == 'string') {
+		if(!this.props.text) {
+			itemRender = <div className={componentClass} data-value={this.props.value}>
+				{icon}
+				{image}
+				{this.props.text}
+				{description}
+				{this.props.children}
+			</div>;
+		} else if(typeof(this.props.text) == 'string') {
 			itemRender = <div className={componentClass} data-value={this.props.value}>
 				{icon}
 				{image}
@@ -53,15 +61,27 @@ export default class Item extends UIComponent {
 				{this.props.children}
 			</div>;
 		} else {
-			itemRender = <div className={componentClass} data-value={this.props.value}>
+			if(this.props.headerLink) {
+				itemRender = <div className={componentClass} data-value={this.props.value}>
 				{icon}
 				{image}
 				<Content>
-						<div className="header">{this.props.text.header}</div>
-						<div className="description">{this.props.text.description}</div>
-						{this.props.children}
+					<a className="header">{this.props.text.header}</a>
+					<div className="description">{this.props.text.description}</div>
+					{this.props.children}
 				</Content>
 			</div>;
+			} else {
+				itemRender = <div className={componentClass} data-value={this.props.value}>
+				{icon}
+				{image}
+				<Content>
+					<div className="header">{this.props.text.header}</div>
+					<div className="description">{this.props.text.description}</div>
+					{this.props.children}
+				</Content>
+			</div>;
+			}
 		}
 
 		return itemRender;
@@ -80,6 +100,7 @@ Item.propTypes = {
 	icon: PropTypes.string,
 	description: PropTypes.string,
 	value: PropTypes.string,
+	headerLink: PropTypes.bool
 };
 
 /*

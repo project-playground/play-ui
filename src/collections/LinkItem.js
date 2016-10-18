@@ -31,6 +31,10 @@ export default class LinkItem extends Item {
 		if(this.props.state) {
 			componentClass = classNames(componentClass, this.props.state);
 		}
+		
+		if(this.props.header) {
+			componentClass = this.props.header;
+		}
 
 		let icon;
 		if(this.props.icon) {
