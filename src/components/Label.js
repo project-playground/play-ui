@@ -71,4 +71,3 @@ Label.propTypes = {
 	basic: PropTypes.bool,
 	colored: PropTypes.oneOf(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'brown', 'pink', 'grey', 'black'])
 }
-

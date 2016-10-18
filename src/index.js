@@ -19,6 +19,9 @@ import menuView from './views/MenuView';
 import headerView from './views/HeaderView';
 import stepView from './views/StepView';
 import dropdownView from './views/DropdownView';
+import breadcrumbView from './views/BreadcrumbView';
+
+import themingView from './views/ThemingView';
 
 import themingView from './views/ThemingView';
 
@@ -74,6 +77,7 @@ export default class Index extends React.Component {
 						<LinkItem text="Menu" to="menu" />
 						<LinkItem text="Dropdown" to="dropdown" />
 						<LinkItem text="Step" to="step" />
+						<LinkItem text="Breadcrumb" to="breadcrumb" />
 					</DropdownItem>
 					<DropdownItem text="Modules">
 						<LinkItem text="Dropdown" to="dropdown" />
@@ -108,6 +112,10 @@ ReactDOM.render(
 			<Route path="menu" component={menuView} />
 			<Route path="dropdown" component={dropdownView} />
 			<Route path="step" component={stepView} />
+<<<<<<< HEAD
+			<Route path="breadcrumb" component={breadcrumbView} />
+=======
+>>>>>>> origin/0.4.0
 
 			<Route path="theming" component={themingView} />
 		</Route>
