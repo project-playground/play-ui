@@ -11,6 +11,7 @@ export default class ListView extends React.Component {
 		var contentText = { header:"site", description:"Your site" };
 		var imgText = {header: "Daniel Louise"};
 		var cellText = {header:"Daniel", description:"Hello"};
+		var linkText = {header:"semantic-ui", description:"Hello wolrd"};
 		return (
 			<div>
         <h3>list</h3>
@@ -42,12 +43,7 @@ export default class ListView extends React.Component {
 		<Divider />
         <h3>icon header link list</h3>
         <List>
-          <Item text="" icon="large github middle aligned">
-            <Content>
-              <LinkItem text="Semantic-ui" />
-              <div className="description">Update</div>
-            </Content>
-          </Item>
+          <Item icon="large github middle aligned" text={linkText} headerLink={true} />
         </List>
 		<Divider />
         <h3>folder list</h3>
