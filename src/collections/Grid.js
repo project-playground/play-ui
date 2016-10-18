@@ -47,6 +47,10 @@ export default class Grid extends UIComponent {
 		if(this.props.stackable) {
 			componentClass = classNames(componentClass, 'stackable');
 		}
+
+		if(this.props.color) {
+			componentClass = classNames(componentClass, 'color');
+		}
 		
 		return (
 			<div className={componentClass}>
@@ -64,6 +68,7 @@ Grid.propTypes = {
 	equalwidth: PropTypes.bool,
 	centered: PropTypes.bool,
 	stackable: PropTypes.bool,
+	color: PropTypes.bool,
 }
 
 Grid.defaultProps = {

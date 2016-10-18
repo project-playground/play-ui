@@ -34,6 +34,10 @@ export default class Column extends UIComponent {
 		if(this.props.only) {
 			componentClass = classNames(componentClass, this.props.only + ' only');
 		}
+
+		if(this.props.colored) {
+			componentClass = classNames(componentClass, this.props.colored);
+		}
 		
 		return (
 			<div className={componentClass}>
