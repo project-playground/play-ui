@@ -2,7 +2,7 @@
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from './UIComponent';
 import Icon from './Icon';
-import button from 'semantic-ui-css/components/button.css';
+import button from 'semantic-ui-css/components/button.min.css';
 //import icon from 'semantic-ui-css/components/icon.css';
 import classNames from 'classnames';
 
@@ -52,7 +52,7 @@ export default class Button extends UIComponent {
 		}
 
 		return (
-			<button className={componentClass}>
+			<button className={componentClass} onClick={this.props.onClick}>
 				{iconButton}
 				{this.props.text}
 				{this.props.children}
@@ -68,5 +68,6 @@ Button.propTypes = {
 	size: PropTypes.oneOf(['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive']),
 	basic: PropTypes.bool,
 	colored: PropTypes.oneOf(['primary', 'secondary', 'red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'brown', 'pink', 'grey', 'black']),
-	compact: PropTypes.bool
+	compact: PropTypes.bool,
+	onClick: PropTypes.func,
 }

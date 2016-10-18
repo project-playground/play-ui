@@ -19,11 +19,17 @@ import menuView from './views/MenuView';
 import headerView from './views/HeaderView';
 import stepView from './views/StepView';
 import dropdownView from './views/DropdownView';
+<<<<<<< HEAD
+import imageView from './views/ImageView';
+
+import modalView from './views/ModalView';
+=======
 import breadcrumbView from './views/BreadcrumbView';
 
 import themingView from './views/ThemingView';
 
 import themingView from './views/ThemingView';
+>>>>>>> origin/0.4.0
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -71,6 +77,7 @@ export default class Index extends React.Component {
 						<LinkItem text="Divider" to="divider" />
 						<LinkItem text="Message" to="message" />
 						<LinkItem text="Header" to="header" />
+						<LinkItem text="Image" to="image" />
 					</DropdownItem>
 					<DropdownItem text="Collections">
 						<LinkItem text="Grid" to="grid" />
@@ -81,6 +88,7 @@ export default class Index extends React.Component {
 					</DropdownItem>
 					<DropdownItem text="Modules">
 						<LinkItem text="Dropdown" to="dropdown" />
+						<LinkItem text="Modal" to="modal" />
 					</DropdownItem>
 					<DropdownItem text="Examples">
 						<LinkItem text="Theming" to="theming" />
@@ -113,11 +121,16 @@ ReactDOM.render(
 			<Route path="dropdown" component={dropdownView} />
 			<Route path="step" component={stepView} />
 <<<<<<< HEAD
+			<Route path="image" component={imageView} />
+			<Route path="modal" component={modalView} />
+=======
+<<<<<<< HEAD
 			<Route path="breadcrumb" component={breadcrumbView} />
 =======
 >>>>>>> origin/0.4.0
 
 			<Route path="theming" component={themingView} />
+>>>>>>> origin/0.4.0
 		</Route>
 	</Router>,
 	document.getElementById('root')
