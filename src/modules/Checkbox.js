@@ -18,13 +18,18 @@ export default class Checkbox extends UIComponent {
     );
   }
 
+  didMount() {
+    $(this.checkbox).checkbox();
+  }
+
   render() {
     let componentClass = this.getClassName();
     let disabled = this.props.disabled ? 'disabled' : '';
+    let label = this.props.label ? (<label>{this.props.label}</label>) : ''; 
     
-    return <div className={componentClass}>
+    return <div className={componentClass} ref={(ref) => this.checkbox = ref} >
       <input name={this.props.name} type={this.props.inputType} disabled={disabled} />
-      <label>{this.props.label}</label>
+      {label}
     </div>;
   };
 }
