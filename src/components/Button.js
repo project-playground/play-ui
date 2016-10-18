@@ -1,7 +1,8 @@
 // Button.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from './UIComponent';
-import button from 'semantic-ui-css/components/button.css';
+import Icon from './Icon';
+import button from 'semantic-ui-css/components/button.min.css';
 //import icon from 'semantic-ui-css/components/icon.css';
 import classNames from 'classnames';
 
@@ -21,34 +22,37 @@ export default class Button extends UIComponent {
 		let componentClass = this.getClassName();
 		let iconButton;
 		if(this.props.icon) {
-			let iconClass = classNames('icon', this.props.icon);
-			iconButton = <i className={iconClass} />
+			iconButton = <Icon icon={this.props.icon} />
+			if(!this.props.text) {
+				componentClass = classNames(componentClass, 'icon');
+			}
 		}
 
-		if(this.props.emphasis) {
-			componentClass = classNames(componentClass, this.props.emphasis);
+		if(this.props.basic) {
+			componentClass = classNames(componentClass, 'basic');
 		}
-		
+
 		if(this.props.size) {
 			// TODO size check
 			componentClass = classNames(componentClass, this.props.size);
 		}
-		
-		if(this.props.disabled) {
-			componentClass = classNames(componentClass, 'disabled');
+
+		if(this.props.state) {
+			// TODO state check
+			componentClass = classNames(componentClass, this.props.state);
 		}
-		
+
 		if(this.props.colored) {
 			// TODO colored check
 			componentClass = classNames(componentClass, this.props.colored);
 		}
-		
+
 		if(this.props.compact) {
 			componentClass = classNames(componentClass, 'compact');
 		}
 
 		return (
-			<button className={componentClass}>
+			<button className={componentClass} onClick={this.props.onClick}>
 				{iconButton}
 				{this.props.text}
 				{this.props.children}
@@ -57,3 +61,13 @@ export default class Button extends UIComponent {
 	};
 }
 
+Button.propTypes = {
+	text: PropTypes.string,
+	icon: PropTypes.string,
+	state: PropTypes.oneOf(['active', 'disabled', 'loading']),
+	size: PropTypes.oneOf(['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive']),
+	basic: PropTypes.bool,
+	colored: PropTypes.oneOf(['primary', 'secondary', 'red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'brown', 'pink', 'grey', 'black']),
+	compact: PropTypes.bool,
+	onClick: PropTypes.func,
+}

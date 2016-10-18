@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
 	entry: __dirname + '/src/index.js',
 
@@ -10,7 +12,8 @@ module.exports = {
 		inline: true,
 		colors: true,
 		contentBase: __dirname + '/public/',
-		host: '0.0.0.0'
+		host: '0.0.0.0',
+		historyApiFallback: true
 	},
 
 	module: {
@@ -30,5 +33,13 @@ module.exports = {
 			test: /\.(png|jpg|svg|eot|woff|woff2|ttf)$/,
 			loader: 'url-loader?limit=8192'
 		}]
-	}
+	},
+	
+	plugins: [
+		new webpack.ProvidePlugin({
+			$: "jquery",
+			jQuery: "jquery",
+			"window.jQuery": "jquery"
+		})
+	]
 };
