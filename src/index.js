@@ -21,6 +21,7 @@ import stepView from './views/StepView';
 import dropdownView from './views/DropdownView';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import imageView from './views/ImageView';
 
 import modalView from './views/ModalView';
@@ -35,6 +36,9 @@ import themingView from './views/ThemingView';
 import loaderView from './views/LoaderView';
 import listView from './views/ListView';
 >>>>>>> 0.4.0-gyunsu
+=======
+import checkboxView from './views/CheckboxView';
+>>>>>>> 0.4.0-chori
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -98,7 +102,11 @@ export default class Index extends React.Component {
 					</DropdownItem>
 					<DropdownItem text="Modules">
 						<LinkItem text="Dropdown" to="dropdown" />
+<<<<<<< HEAD
 						<LinkItem text="Modal" to="modal" />
+=======
+						<LinkItem text="CheckBox" to="checkbox" />
+>>>>>>> 0.4.0-chori
 					</DropdownItem>
 					<DropdownItem text="Examples">
 						<LinkItem text="Theming" to="theming" />
@@ -132,6 +140,7 @@ ReactDOM.render(
 			<Route path="step" component={stepView} />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<Route path="image" component={imageView} />
 			<Route path="modal" component={modalView} />
 =======
@@ -146,6 +155,9 @@ ReactDOM.render(
 			<Route path="loader" component={loaderView} />
 			<Route path="list" component={listView} />
 >>>>>>> 0.4.0-gyunsu
+=======
+			<Route path="checkbox" component={checkboxView} />
+>>>>>>> 0.4.0-chori
 		</Route>
 	</Router>,
 	document.getElementById('root')
