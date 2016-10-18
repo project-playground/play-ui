@@ -44,7 +44,15 @@ export default class Item extends UIComponent {
 		}
 
 		let itemRender;
-		if(typeof(this.props.text) == 'string') {
+		if(!this.props.text) {
+			itemRender = <div className={componentClass} data-value={this.props.value}>
+				{icon}
+				{image}
+				{this.props.text}
+				{description}
+				{this.props.children}
+			</div>;
+		} else if(typeof(this.props.text) == 'string') {
 			itemRender = <div className={componentClass} data-value={this.props.value}>
 				{icon}
 				{image}
