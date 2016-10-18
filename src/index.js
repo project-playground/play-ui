@@ -19,26 +19,15 @@ import menuView from './views/MenuView';
 import headerView from './views/HeaderView';
 import stepView from './views/StepView';
 import dropdownView from './views/DropdownView';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 import imageView from './views/ImageView';
 
 import modalView from './views/ModalView';
-=======
 import breadcrumbView from './views/BreadcrumbView';
-
-import themingView from './views/ThemingView';
-
-import themingView from './views/ThemingView';
->>>>>>> origin/0.4.0
-=======
 import loaderView from './views/LoaderView';
 import listView from './views/ListView';
->>>>>>> 0.4.0-gyunsu
-=======
 import checkboxView from './views/CheckboxView';
->>>>>>> 0.4.0-chori
+
+import themingView from './views/ThemingView';
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -86,12 +75,9 @@ export default class Index extends React.Component {
 						<LinkItem text="Divider" to="divider" />
 						<LinkItem text="Message" to="message" />
 						<LinkItem text="Header" to="header" />
-<<<<<<< HEAD
 						<LinkItem text="Image" to="image" />
-=======
 						<LinkItem text="Loader" to="loader" />
 						<LinkItem text="List" to="list" />
->>>>>>> 0.4.0-gyunsu
 					</DropdownItem>
 					<DropdownItem text="Collections">
 						<LinkItem text="Grid" to="grid" />
@@ -102,11 +88,8 @@ export default class Index extends React.Component {
 					</DropdownItem>
 					<DropdownItem text="Modules">
 						<LinkItem text="Dropdown" to="dropdown" />
-<<<<<<< HEAD
 						<LinkItem text="Modal" to="modal" />
-=======
 						<LinkItem text="CheckBox" to="checkbox" />
->>>>>>> 0.4.0-chori
 					</DropdownItem>
 					<DropdownItem text="Examples">
 						<LinkItem text="Theming" to="theming" />
@@ -138,26 +121,14 @@ ReactDOM.render(
 			<Route path="menu" component={menuView} />
 			<Route path="dropdown" component={dropdownView} />
 			<Route path="step" component={stepView} />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 			<Route path="image" component={imageView} />
 			<Route path="modal" component={modalView} />
-=======
-<<<<<<< HEAD
 			<Route path="breadcrumb" component={breadcrumbView} />
-=======
->>>>>>> origin/0.4.0
-
-			<Route path="theming" component={themingView} />
->>>>>>> origin/0.4.0
-=======
 			<Route path="loader" component={loaderView} />
 			<Route path="list" component={listView} />
->>>>>>> 0.4.0-gyunsu
-=======
 			<Route path="checkbox" component={checkboxView} />
->>>>>>> 0.4.0-chori
+
+			<Route path="theming" component={themingView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
