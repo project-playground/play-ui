@@ -47,7 +47,7 @@ export default class Breadcrumb extends UIComponent {
 		
 		return (
 			<div className={componentClass}>
-				{sections}
+				{this.props.children}
 			</div>
 		)
 	};

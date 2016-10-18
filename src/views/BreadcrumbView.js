@@ -18,8 +18,10 @@ export default class BreadcrumbView extends React.Component {
 				<h3>Breadcrumb</h3>
 				<Breadcrumb divider={dividerObj}>
 					<div class="section">a</div>
+					<div class="divider">/</div>
 					<div class="section">b</div>
-					<div class="section">c</div>
+					<div class="divider">/</div>
+					<div class="section active">c</div>
 				</Breadcrumb>
 
 				<Breadcrumb divider={dividerIcon} >
