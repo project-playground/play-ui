@@ -19,6 +19,7 @@ import menuView from './views/MenuView';
 import headerView from './views/HeaderView';
 import stepView from './views/StepView';
 import dropdownView from './views/DropdownView';
+import checkboxView from './views/CheckboxView';
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -75,6 +76,7 @@ export default class Index extends React.Component {
 					</DropdownItem>
 					<DropdownItem text="Modules">
 						<LinkItem text="Dropdown" to="dropdown" />
+						<LinkItem text="CheckBox" to="checkbox" />
 					</DropdownItem>
 					<DropdownItem text="Examples">
 						<LinkItem text="HelloWorld" />
@@ -106,6 +108,7 @@ ReactDOM.render(
 			<Route path="menu" component={menuView} />
 			<Route path="dropdown" component={dropdownView} />
 			<Route path="step" component={stepView} />
+			<Route path="checkbox" component={checkboxView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
