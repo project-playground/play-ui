@@ -26,6 +26,7 @@ import loaderView from './views/LoaderView';
 import listView from './views/ListView';
 import checkboxView from './views/CheckboxView';
 import revealView from './views/RevealView';
+import dimmerView from './views/DimmerView';
 
 import themingView from './views/ThemingView';
 
@@ -78,6 +79,7 @@ export default class Index extends React.Component {
 						<LinkItem text="Loader" to="loader" />
 						<LinkItem text="Image" to="image" />
 						<LinkItem text="Reveal" to="reveal" />
+						<LinkItem text="Dimmer" to="dimmer" />
 					</DropdownItem>
 					<DropdownItem text="Collections">
 						<LinkItem text="Grid" to="grid" />
@@ -129,6 +131,7 @@ ReactDOM.render(
 			<Route path="checkbox" component={checkboxView} />
 			<Route path="image" component={imageView} />
 			<Route path="reveal" component={revealView} />
+			<Route path="dimmer" component={dimmerView} />
 
 			<Route path="theming" component={themingView} />
 		</Route>
