@@ -28,6 +28,7 @@ import checkboxView from './views/CheckboxView';
 import revealView from './views/RevealView';
 import dimmerView from './views/DimmerView';
 import progressView from './views/ProgressView';
+import ratingView from './views/RatingView';
 
 import themingView from './views/ThemingView';
 
@@ -95,6 +96,7 @@ export default class Index extends React.Component {
 						<LinkItem text="CheckBox" to="checkbox" />
 						<LinkItem text="Modal" to="modal" />
 						<LinkItem text="Progress" to="progress" />
+						<LinkItem text="Rating" to="rating" />
 					</DropdownItem>
 					<DropdownItem text="Examples">
 						<LinkItem text="Theming" to="theming" />
@@ -135,6 +137,7 @@ ReactDOM.render(
 			<Route path="reveal" component={revealView} />
 			<Route path="dimmer" component={dimmerView} />
 			<Route path="progress" component={progressView} />
+			<Route path="rating" component={ratingView} />
 
 			<Route path="theming" component={themingView} />
 		</Route>
