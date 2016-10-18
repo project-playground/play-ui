@@ -20,12 +20,12 @@ import headerView from './views/HeaderView';
 import stepView from './views/StepView';
 import dropdownView from './views/DropdownView';
 import imageView from './views/ImageView';
-
 import modalView from './views/ModalView';
 import breadcrumbView from './views/BreadcrumbView';
 import loaderView from './views/LoaderView';
 import listView from './views/ListView';
 import checkboxView from './views/CheckboxView';
+import revealView from './views/RevealView';
 
 import themingView from './views/ThemingView';
 
@@ -69,27 +69,28 @@ export default class Index extends React.Component {
 					<LinkItem text="Home" to="home" icon="home" />
 					<DropdownItem text="Components">
 						<LinkItem text="Button" to="button" />
+						<LinkItem text="Header" to="header" />
 						<LinkItem text="Label" to="label" />
 						<LinkItem text="Input" to="input" />
 						<LinkItem text="LabeledInput" to="labeledInput" />
 						<LinkItem text="Divider" to="divider" />
 						<LinkItem text="Message" to="message" />
-						<LinkItem text="Header" to="header" />
-						<LinkItem text="Image" to="image" />
 						<LinkItem text="Loader" to="loader" />
-						<LinkItem text="List" to="list" />
+						<LinkItem text="Image" to="image" />
+						<LinkItem text="Reveal" to="reveal" />
 					</DropdownItem>
 					<DropdownItem text="Collections">
 						<LinkItem text="Grid" to="grid" />
 						<LinkItem text="Menu" to="menu" />
 						<LinkItem text="Dropdown" to="dropdown" />
+						<LinkItem text="List" to="list" />
 						<LinkItem text="Step" to="step" />
 						<LinkItem text="Breadcrumb" to="breadcrumb" />
 					</DropdownItem>
 					<DropdownItem text="Modules">
 						<LinkItem text="Dropdown" to="dropdown" />
-						<LinkItem text="Modal" to="modal" />
 						<LinkItem text="CheckBox" to="checkbox" />
+						<LinkItem text="Modal" to="modal" />
 					</DropdownItem>
 					<DropdownItem text="Examples">
 						<LinkItem text="Theming" to="theming" />
@@ -121,35 +122,16 @@ ReactDOM.render(
 			<Route path="menu" component={menuView} />
 			<Route path="dropdown" component={dropdownView} />
 			<Route path="step" component={stepView} />
-			<Route path="image" component={imageView} />
 			<Route path="modal" component={modalView} />
 			<Route path="breadcrumb" component={breadcrumbView} />
 			<Route path="loader" component={loaderView} />
 			<Route path="list" component={listView} />
 			<Route path="checkbox" component={checkboxView} />
+			<Route path="image" component={imageView} />
+			<Route path="reveal" component={revealView} />
 
 			<Route path="theming" component={themingView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
 );
-
-/*
-				<div className="ui inverted segment">
-					<div className="ui inverted secondary pointing menu">
-						<Link className={this.getMenuActiveState('home')} to="home" onClick={this.handleClick}>Home</Link>
-						<Link className={this.getMenuActiveState('button')} to="button" onClick={this.handleClick}>Button</Link>
-						<Link className={this.getMenuActiveState('label')} to="label" onClick={this.handleClick}>Label</Link>
-						<Link className={this.getMenuActiveState('input')} to="input" onClick={this.handleClick}>Input</Link>
-						<Link className={this.getMenuActiveState('labeledInput')} to="labeledInput" onClick={this.handleClick}>LabeledInput</Link>
-						<Link className={this.getMenuActiveState('divider')} to="divider" onClick={this.handleClick}>Divider</Link>
-						<Link className={this.getMenuActiveState('message')} to="message" onClick={this.handleClick}>Message</Link>
-                        <Link className={this.getMenuActiveState('header')} to="header" onClick={this.handleClick}>Header</Link>
-						<Link className={this.getMenuActiveState('grid')} to="grid" onClick={this.handleClick}>Grid</Link>
-						<Link className={this.getMenuActiveState('menu')} to="menu" onClick={this.handleClick}>Menu</Link>
-						<Link className={this.getMenuActiveState('dropdown')} to="dropdown" onClick={this.handleClick}>Dropdown</Link>
-						<Link className={this.getMenuActiveState('step')} to="step" onClick={this.handleClick}>Step</Link>
-					</div>
-				</div>
-
-*/
