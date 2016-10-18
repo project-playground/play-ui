@@ -8,9 +8,9 @@ import Menu from '../collections/Menu';
 import dropdown from 'semantic-ui-css/components/dropdown.min.css';
 import classNames from 'classnames';
 
-const CLASSNAME = 'dropdown';
+const CLASSNAME = 'selection dropdown';
 
-export default class Dropdown extends UIComponent {
+export default class Selection extends UIComponent {
 	constructor(props) {
 		super(props);
 	}
@@ -20,16 +20,7 @@ export default class Dropdown extends UIComponent {
 	}
 
 	componentWillMount() {
-		/*
-		this.props.children.map(function(child, i) {
-			console.log(i, child);
-			if(child.type === Item) {
-				console.log('Item!!!!!');
-			} else {
-				console.log('Not Item!!!!!', child.type);
-			}
-		});
-		*/
+
 	}
 
 	componentDidMount() {
@@ -38,32 +29,23 @@ export default class Dropdown extends UIComponent {
 
 	render() {
 		let componentClass = this.getClassName();
-		let textClass = 'text';
 
-		let dataInput;
-		if(this.props.type && this.props.type !== 'default') {
-			componentClass = classNames(componentClass, this.props.type);
-			if(!this.props.name)
-				throw new Error('name is required at selection type in dropdown');
-
-			textClass = classNames(textClass, 'default');
-			dataInput = <input type="hidden" name={this.props.name} />;
-		}
-
-		let search;
 		if(this.props.search) {
 			componentClass = classNames(componentClass, 'search');
 		}
 
-		let multiple;
 		if(this.props.multiple) {
 			componentClass = classNames(componentClass, 'multiple');
 		}
 
+		if(this.props.fluid) {
+			componentClass = classNames(componentClass, 'fluid');
+		}
+
 		return (
 			<div className={componentClass}>
-				{dataInput}
-				<div className={textClass}>{this.props.text}</div>
+				<input type="hidden" name={this.props.name} />
+				<div className="default text">{this.props.text}</div>
 				<Icon icon="dropdown"/>
 				<Menu>
 					{this.props.children}
@@ -73,14 +55,15 @@ export default class Dropdown extends UIComponent {
 	}
 }
 
-Dropdown.propTypes = {
-	type: PropTypes.oneOf(['default', 'selection']),
-	name: PropTypes.string,
+Selection.propTypes = {
+	name: PropTypes.string.isRequired,
 	text: PropTypes.string,
 	search: PropTypes.bool,
 	multiple: PropTypes.bool,
 };
 
+/*
 Dropdown.defaultProps = {
 	type: 'default',
 };
+*/
