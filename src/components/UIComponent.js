@@ -47,32 +47,53 @@ export default class UIComponent extends React.Component {
 		
 		if(this.willMount) { this.willMount(); }
 	};
+
 	componentDidMount() {
-		// TODO implement componentDidMount
+		// apply Popup
+		if(this.props.dataContent || this.props.dataTooltip) {
+			if(this.props.dataContent)
+				$(this.component).attr('data-content', this.props.dataContent);
+			if(this.props.dataTitle)
+				$(this.component).attr('data-title', this.props.dataTitle);
+
+			if(this.props.dataTooltip)
+				$(this.component).attr('data-tooltip', this.props.dataTooltip);
+			if(this.props.dataInverted)
+				$(this.component).attr('data-inverted', '');
+			if(this.props.dataPosition)
+				$(this.component).attr('data-position', this.props.dataPosition);
+
+			$(this.component).popup();
+		}
 		
 		if(this.didMount) { this.didMount(); }
 	};
+
 	componentWillReceiveProps(nextProps) {
 		// TODO implement componentWillReceiveProps
 		
 		if(this.willReceiveProps) { this.willReceiveProps(nextProps); }
 	};
+
 	shouldComponentUpdate(nextProps, nextState) {
 		// TODO implement shouldComponentUpdate
 		
 		if(this.shouldUpdate) { return this.shouldUpdate(nextProps, nextState); }
 		else return true;
 	}
+
 	componentWillUpdate(nextProps, nextState) {
 		// TODO implement componentWillUpdate
 		
 		if(this.willUpdate) { this.willUpdate(nextProps, nextState); }
 	};
+
 	componentDidUpdate(prevProps, prevState) {
 		// TODO implement componentDidUpdate
 		
 		if(this.didUpdate) { this.didUpdate(prevProps, prevState); }
 	};
+
 	componentWillUnMount() {
 		// TODO implement componentWillUnMount
 				

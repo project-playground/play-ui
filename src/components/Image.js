@@ -56,7 +56,10 @@ export default class Image extends UIComponent {
         }
 
 		return (
-			<img className={componentClass} src={this.props.src} />
+			<img 
+                className={componentClass} 
+                src={this.props.src} 
+                ref={(ref) => this.component = ref}/>
 		);
 	}
 }
