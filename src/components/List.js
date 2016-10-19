@@ -69,7 +69,8 @@ export default class List extends UIComponent {
 		}
 
 		return (
-			<div className={listClass}>
+			<div className={listClass}
+				ref={(ref) => this.component = ref}>
         		{this.props.children}
 			</div>
 		);

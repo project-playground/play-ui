@@ -24,7 +24,7 @@ export default class Selection extends UIComponent {
 	}
 
 	componentDidMount() {
-		$('.ui.dropdown').dropdown();
+		$(this.component).dropdown();
 	}
 
 	render() {
@@ -43,7 +43,8 @@ export default class Selection extends UIComponent {
 		}
 
 		return (
-			<div className={componentClass}>
+			<div className={componentClass}
+				ref={(ref) => this.component = ref}>
 				<input type="hidden" name={this.props.name} />
 				<div className="default text">{this.props.text}</div>
 				<Icon icon="dropdown"/>

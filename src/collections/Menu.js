@@ -49,7 +49,8 @@ export default class Menu extends UIComponent {
 		}
 
 		return (
-			<div className={componentClass}>
+			<div className={componentClass}
+				ref={(ref) => this.component = ref}>
 				{this.props.children}
 			</div>
 		);

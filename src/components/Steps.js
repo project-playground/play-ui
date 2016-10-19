@@ -34,7 +34,8 @@ export default class Steps extends UIComponent {
     });
     
     return (
-      <div className={componentClass}>
+      <div className={componentClass}
+      	ref={(ref) => this.component = ref}>
         {steps}
       </div>
     );

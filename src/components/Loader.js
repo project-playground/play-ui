@@ -85,9 +85,10 @@ export default class Loader extends UIComponent {
     }
 
 		return (
-			<div className={loaderClass}>
-        {loaderContent}
-        {this.props.children}
+			<div className={loaderClass}
+				ref={(ref) => this.component = ref}>
+		        {loaderContent}
+		        {this.props.children}
 			</div>
 		);
 	};

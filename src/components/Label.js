@@ -55,7 +55,8 @@ export default class Label extends UIComponent {
 		}
 		
 		return (
-			<div className={componentClass}>
+			<div className={componentClass}
+				ref={(ref) => this.component = ref}>
 				{icon}
 				{this.props.text}
 				{rightIcon}

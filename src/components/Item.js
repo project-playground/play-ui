@@ -86,9 +86,9 @@ export default class Item extends UIComponent {
 			}
 			
 			itemContent = {itemText}	
-			
-			return (	
-				<div className={itemClass}>
+			return (
+				<div className={itemClass}
+					ref={(ref) => this.component = ref}>
 					{imgContent}
 	        		{itemContent}
 				</div>

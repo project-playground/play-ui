@@ -52,7 +52,10 @@ export default class Button extends UIComponent {
 		}
 
 		return (
-			<button className={componentClass} onClick={this.props.onClick}>
+			<button 
+				className={componentClass} 
+				onClick={this.props.onClick}
+				ref={(ref) => this.component = ref}>
 				{iconButton}
 				{this.props.text}
 				{this.props.children}

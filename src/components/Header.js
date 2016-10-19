@@ -60,15 +60,30 @@ export default class Header extends UIComponent {
     let header;
     
     if(this.props.size === 1) {
-      header = <h1 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h1>;
+      header = (
+      	<h1 className={componentClass}
+      		ref={(ref) => this.component = ref}>{content}{subHeader}{iContent}{imgContent}{textContent}</h1>
+      );
     } else if(this.props.size === 2) {
-      header = <h2 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h2>;
+      header = (
+      	<h2 className={componentClass}
+      		ref={(ref) => this.component = ref}>{content}{subHeader}{iContent}{imgContent}{textContent}</h2>
+      );
     } else if(this.props.size === 3) {
-      header = <h3 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h3>;
+      header = (
+      	<h3 className={componentClass}
+      		ref={(ref) => this.component = ref}>{content}{subHeader}{iContent}{imgContent}{textContent}</h3>
+      );
     } else if(this.props.size === 4) {
-      header = <h4 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h4>;
+      header = (
+      	<h4 className={componentClass}
+      		ref={(ref) => this.component = ref}>{content}{subHeader}{iContent}{imgContent}{textContent}</h4>
+      );
     } else if(this.props.size === 5) {
-      header = <h5 className={componentClass}>{content}{subHeader}{iContent}{imgContent}{textContent}</h5>;
+      header = (
+      	<h5 className={componentClass}
+      		ref={(ref) => this.component = ref}>{content}{subHeader}{iContent}{imgContent}{textContent}</h5>
+      );
     }
 
     return header;
