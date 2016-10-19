@@ -20,7 +20,21 @@ export default class Column extends UIComponent {
 		let componentClass = this.getClassName();
 		
 		if(this.props.column) {
-			componentClass = classNames(componentClass, COLUMNS[this.props.column - 1] + ' wide column');
+			if(typeof this.props.column === 'number') {
+				componentClass = classNames(componentClass, COLUMNS[this.props.column - 1] + ' wide column');
+			} else {
+				if(this.props.column.computer) {
+					componentClass = classNames(componentClass, COLUMNS[this.props.column.computer - 1] + ' wide computer column');
+				} 
+				
+				if(this.props.column.tablet) {
+					componentClass = classNames(componentClass, COLUMNS[this.props.column.tablet - 1] + ' wide tablet column');
+				}
+				
+				if(this.props.column.mobile) {
+					componentClass = classNames(componentClass, COLUMNS[this.props.column.mobile - 1] + ' wide mobile column');
+				}
+			}
 		}
 
 		if(this.props.floated) {
@@ -48,8 +62,15 @@ export default class Column extends UIComponent {
 }
 
 Column.propTypes = {
-	column: PropTypes.number,
+	column: PropTypes.oneOfType([
+		PropTypes.number,
+		PropTypes.shape({
+			computer: PropTypes.number,
+			tablet: PropTypes.number,
+			mobile: PropTypes.number,
+		})
+	]),	 
 	floated: PropTypes.oneOf(['left', 'right']),
 	align: PropTypes.oneOf(['left', 'center', 'right']),
-	only: PropTypes.oneOf(['computer', 'tablet', 'mobile']),
+	only: PropTypes.oneOf(['widescreen', 'large', 'computer', 'tablet', 'mobile']),
 }

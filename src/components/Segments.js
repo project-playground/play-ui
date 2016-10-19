@@ -1,11 +1,12 @@
-// Container.js
+// Segments.js
 import React, { Component, PropTypes  } from 'react';
 import UIComponent from './UIComponent';
+import segment from 'semantic-ui-css/components/segment.css';
 import classNames from 'classnames';
 
-const CLASSNAME = 'container';
+const CLASSNAME = 'segments';
 
-export default class Container extends UIComponent {
+export default class Segments extends UIComponent {
 	constructor(props) {
 		super(props);
 		this.state = {};
@@ -17,19 +18,12 @@ export default class Container extends UIComponent {
 
 	render() {
 		let componentClass = this.getClassName();
-		
-		if(this.props.text) {
-			componentClass = classNames(componentClass, 'text');
-		}
-		
+								
 		return (
-			<div className={componentClass}>
+			<div className={componentClass}
+				ref={(ref) => this.component = ref}>
 				{this.props.children}
 			</div>
-		)
+		);
 	};
-}
-
-Container.propTypes = {
-	text: PropTypes.bool,
 }

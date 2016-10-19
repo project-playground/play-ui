@@ -52,6 +52,10 @@ export default class Grid extends UIComponent {
 			componentClass = classNames(componentClass, 'color');
 		}
 		
+		if(this.props.container) {
+			componentClass = classNames(componentClass, 'container');
+		}
+		
 		return (
 			<div className={componentClass}>
 				{this.props.children}
@@ -69,6 +73,7 @@ Grid.propTypes = {
 	centered: PropTypes.bool,
 	stackable: PropTypes.bool,
 	color: PropTypes.bool,
+	container: PropTypes.bool,
 }
 
 Grid.defaultProps = {

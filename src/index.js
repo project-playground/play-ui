@@ -32,6 +32,7 @@ import ratingView from './views/RatingView';
 import popupView from './views/PopupView';
 
 import themingView from './views/ThemingView';
+import responsiveView from './views/ResponsiveView';
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -102,6 +103,7 @@ export default class Index extends React.Component {
 					</DropdownItem>
 					<DropdownItem text="Examples">
 						<LinkItem text="Theming" to="theming" />
+						<LinkItem text="Responsive UI" to="responsive" />
 					</DropdownItem>
 					<Menu sub={true} align="right">
 						<Item text="play-ui" icon="leaf"/>
@@ -143,6 +145,7 @@ ReactDOM.render(
 			<Route path="popup" component={popupView} />
 
 			<Route path="theming" component={themingView} />
+			<Route path="responsive" component={responsiveView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
