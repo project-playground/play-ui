@@ -24,7 +24,8 @@ export default class Icon extends UIComponent {
 		}
 
 		return (
-			<i className={componentClass}></i>
+			<i className={componentClass}
+				ref={(ref) => this.component = ref}></i>
 		);
 	}
 }

@@ -33,7 +33,7 @@ export default class Dropdown extends UIComponent {
 	}
 
 	componentDidMount() {
-		$('.ui.dropdown').dropdown();
+		$(this.component).dropdown();
 	}
 
 	render() {
@@ -61,7 +61,8 @@ export default class Dropdown extends UIComponent {
 		}
 
 		return (
-			<div className={componentClass}>
+			<div className={componentClass}
+				ref={(ref) => this.component = ref}>
 				{dataInput}
 				<div className={textClass}>{this.props.text}</div>
 				<Icon icon="dropdown"/>

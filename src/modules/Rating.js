@@ -18,7 +18,7 @@ export default class Rating extends UIComponent {
 	}
 
     didMount() {
-        $(this.rating).rating();
+        $(this.component).rating();
     }
 
 	render() {
@@ -37,7 +37,7 @@ export default class Rating extends UIComponent {
                 className={componentClass} 
                 data-max-rating={this.props.data.max} 
                 data-rating={this.props.data.rating}
-                ref={(ref) => {this.rating = ref}}>
+                ref={(ref) => {this.component = ref}}>
 			</div>
 		);
 	};

@@ -19,7 +19,7 @@ export default class Checkbox extends UIComponent {
   }
 
   didMount() {
-    $(this.checkbox).checkbox();
+    $(this.component).checkbox();
   }
 
   render() {
@@ -27,7 +27,7 @@ export default class Checkbox extends UIComponent {
     let disabled = this.props.disabled ? 'disabled' : '';
     let label = this.props.label ? (<label>{this.props.label}</label>) : ''; 
     
-    return <div className={componentClass} ref={(ref) => this.checkbox = ref} >
+    return <div className={componentClass} ref={(ref) => this.component = ref} >
       <input name={this.props.name} type={this.props.inputType} disabled={disabled} />
       {label}
     </div>;

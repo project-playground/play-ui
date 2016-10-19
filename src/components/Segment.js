@@ -25,7 +25,8 @@ export default class Segment extends UIComponent {
 		}
 						
 		return (
-			<div className={componentClass}>
+			<div className={componentClass}
+				ref={(ref) => this.component = ref}>
 				{this.props.children}
 			</div>
 		);

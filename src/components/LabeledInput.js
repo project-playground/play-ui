@@ -24,7 +24,8 @@ export default class LabeledInput extends Input {
 		}
 		
 		return (
-			<div className={componentClass}>
+			<div className={componentClass}
+				ref={(ref) => this.component = ref}>
 				<Label {...this.props} text={this.props.label}></Label>
 				<Input {...this.props} isContained="true" />
 			</div>

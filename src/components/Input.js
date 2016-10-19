@@ -44,7 +44,10 @@ export default class Input extends UIComponent {
 			}
 
 			result = <div className={componentClass}>
-				<input type={this.props.type} placeholder={this.props.placeholder} defaultValue={this.props.value} />
+				<input type={this.props.type} 
+					placeholder={this.props.placeholder} 
+					defaultValue={this.props.value} 
+					ref={(ref) => this.component = ref} />
 				{icon}
 			</div>;
 		}

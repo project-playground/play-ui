@@ -27,7 +27,8 @@ export default class Step extends Component {
     }
     
     return (
-      <div className={stepClass}>
+      <div className={stepClass}
+      	ref={(ref) => this.component = ref}>
         {iconComponent}
         <div className='content'>
           <div className='title'>{this.props.title}</div>

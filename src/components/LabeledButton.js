@@ -14,7 +14,8 @@ export default class LabeledButton extends Button {
 		var componentClass = this.getClassName();
 
 		return (
-			<div className={componentClass}>
+			<div className={componentClass}
+				ref={(ref) => this.component = ref}>
 				<Button {...this.props} />
 				<a className="ui basic left pointing label">{this.props.label}</a>
 			</div>

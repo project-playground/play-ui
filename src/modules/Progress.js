@@ -18,14 +18,16 @@ export default class Progress extends UIComponent {
 	}
 
     didMount() {
-        $(this.progress).progress();
+        $(this.component).progress();
     }
 
 	render() {
         let componentClass = this.getClassName();
 
 		return (
-			<div className={componentClass} data-percent={this.props.data.percent} ref={(ref) => {this.progress = ref}}>
+			<div className={componentClass} 
+				data-percent={this.props.data.percent} 
+				ref={(ref) => {this.component = ref}}>
                 <div className="bar">
                     <div className="progress"></div>
                 </div>

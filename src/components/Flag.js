@@ -24,7 +24,8 @@ export default class Flag extends Icon {
 		}
 		
 		return (
-			<i className={componentClass}></i>
+			<i className={componentClass}
+				ref={(ref) => this.component = ref}></i>
 		);
 	}
 }

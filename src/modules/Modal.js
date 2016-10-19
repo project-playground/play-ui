@@ -44,12 +44,12 @@ export default class Modal extends UIComponent {
 
     show() {
         this.setState({isShow: true});
-        $(this.modal).modal('show');
+        $(this.component).modal('show');
     }
 
     hide() {
         this.setState({isShow: false});
-        $(this.modal).modal('hide');
+        $(this.component).modal('hide');
     }
 
     isShow() {
@@ -98,7 +98,8 @@ export default class Modal extends UIComponent {
         }
 	
 		return (
-			<div className={componentClass} ref={(ref) => {this.modal = ref}}>
+			<div className={componentClass} 
+				ref={(ref) => {this.component = ref}}>
 				{closeIcon}
 				{header}
                 {this.props.children}

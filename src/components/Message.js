@@ -77,7 +77,8 @@ export default class Message extends UIComponent {
 		}
 
 		return (
-			<div className={componentClass}>
+			<div className={componentClass}
+				ref={(ref) => this.component = ref}>
 				{icon}
 				{close}
 				{content}
