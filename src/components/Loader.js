@@ -26,6 +26,7 @@ export default class Loader extends UIComponent {
     let textLoader;
     if(this.props.text) {
       textLoader = this.props.text;
+      componentClass = classNames(componentClass, "text");
     }
 
     if(this.props.overLap) {
@@ -93,15 +94,15 @@ export default class Loader extends UIComponent {
 		);
 	};
 }
-/*
+
 Loader.propTypes = {
-	header: PropTypes.string,
 	text: PropTypes.string,
-	icon: PropTypes.string,
-	close: PropTypes.bool,
-	hidden: PropTypes.bool,
-	visible: PropTypes.bool,
-	level: PropTypes.oneOf(['warning', 'info', 'positive', 'success', 'negative', 'error']),
-	colored: PropTypes.oneOf(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'black'])
+	overLap: PropTypes.bool,
+	inverted: PropTypes.bool,
+	dimmer: PropTypes.bool,
+	inline: PropTypes.bool,
+	inlineCenter: PropTypes.bool,
+	size: PropTypes.oneOf(['mini','tiny','small','medium','large','big','huge','massive']),
+	state: PropTypes.oneOf(['active', 'disabled','indeterminate'])
 }
-*/
+

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Loader from '../components/Loader';
+import Image from '../components/Image';
 
 export default class LoaderView extends React.Component {
 	render() {
@@ -10,54 +11,85 @@ export default class LoaderView extends React.Component {
 
       <h3>Simple Loader</h3>
       <Loader overLap={true} state="active" text="loading">
-        <p>test</p>
-        <p>test</p>
-        <p>test</p>
-        <input type="text" />
+        <Image src="/assets/images/wireframe/short-paragraph.png" />
       </Loader>
       
       <h3>Loader</h3>
-      <Loader overLap={true} />
+      <Loader overLap={true}>
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>text Loader</h3>
-      <Loader overLap={true} text="Loading" />
+      <Loader overLap={true} text="Loading">
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>text invered Loader</h3>
-      <Loader overLap={true} text="Loadning" inverted={true} />
+      <Loader overLap={true} text="Loadning" inverted={true} >
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>indeterminate Loader</h3>
-      <Loader overLap={true} text="Preparing Files" state="indeterminate" />
+      <Loader overLap={true} text="Preparing Files" state="indeterminate">
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>no child active Loader</h3>
-      <Loader overLap={false} state="active" />
+      <Loader overLap={false} state="active">
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>no child disalbed Loader</h3>
-      <Loader overLap={false} state="disabled" />
+      <Loader overLap={false} state="disabled">
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>inline Loader</h3>
-      <Loader overLap={true} inline={true} />
+      <Loader overLap={true} inline={true}>
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>nochild inline Loader</h3>
-      <Loader overLap={false} state="active" inline={true} />
+      <Loader overLap={false} state="active" inline={true}>
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>inline center Loader</h3>
-      <Loader overLap={true} inlineCenter={true} />
+      <Loader overLap={true} inlineCenter={true}>
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>nochild inline center Loader</h3>
-      <Loader overLap={false} state="active" inlineCenter={true} />
+      <Loader overLap={false} state="active" inlineCenter={true}>
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>size Loader</h3>
-      <Loader overLap={true} size="mini" text="mini"/>
-      <Loader overLap={true} size="tiny" text="tiny"/>
-      <Loader overLap={true} size="small" text="small"/>
-      <Loader overLap={true} size="medium" text="medium"/>
-      <Loader overLap={true} size="large" text="large"/>
+      <Loader overLap={true} size="mini" text="mini">
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
+      <Loader overLap={true} size="tiny" text="tiny">
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
+      <Loader overLap={true} size="small" text="small">
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
+      <Loader overLap={true} size="medium" text="medium">
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
+      <Loader overLap={true} size="large" text="large">
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>no child inverted Loader</h3>
-      <Loader overLap={false} state="active" inverted={true} />
+      <Loader overLap={false} state="active" inverted={true}>
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       
       <h3>inverted Loader</h3>
-      <Loader overLap={true} inverted={true} />
+      <Loader overLap={true} inverted={true}>
+	      <Image src="/assets/images/wireframe/short-paragraph.png" />
+	  </Loader>
       {/*
       <h3>Simple no child Loader</h3>
       <Loader overLap={true} state="active" text="loading" />
