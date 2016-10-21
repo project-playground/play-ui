@@ -18,7 +18,11 @@ export default class Segments extends UIComponent {
 
 	render() {
 		let componentClass = this.getClassName();
-								
+		
+		if(this.props.horizontal) {
+			componentClass = classNames(componentClass, 'horizontal');
+		}
+		
 		return (
 			<div className={componentClass}
 				ref={(ref) => this.component = ref}>
@@ -26,4 +30,8 @@ export default class Segments extends UIComponent {
 			</div>
 		);
 	};
+}
+
+Segments.propTypes = {
+	horizontal: PropTypes.bool,
 }

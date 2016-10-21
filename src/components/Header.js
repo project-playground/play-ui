@@ -17,7 +17,7 @@ export default class Header extends UIComponent {
         this.props.sub == 'sub' || this.props.sub ? 'sub' : '',
         this.props.divide == 'divide' || this.props.divide ? 'dividing' : '',
         this.props.block == 'block' || this.props.block ? 'block' : '',
-        this.props.attached ? (this.props.attached == 'default' ? '' : this.props.attached) + ' attached' : '',
+        this.props.attached ? (this.props.attached == 'attached' ? '' : this.props.attached) + ' attached' : '',
         this.props.floated ? this.props.floated + ' floated' : '',
         this.props.colored ? this.props.colored : '',
         this.props.inverted == 'inverted' || this.props.inverted ? 'inverted' : '',
@@ -117,7 +117,7 @@ Header.propTypes = {
     PropTypes.bool,
     PropTypes.oneOf(['block'])
   ]),
-  attached: PropTypes.oneOf(['top', 'default', 'bottom']),
+  attached: PropTypes.oneOf(['top', 'attached', 'bottom']),
   floated: PropTypes.oneOf(['right', 'left']),
   inverted: PropTypes.oneOfType([
     PropTypes.bool,

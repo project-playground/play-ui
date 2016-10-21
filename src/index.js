@@ -34,6 +34,7 @@ import tableView from './views/TableView';
 
 import themingView from './views/ThemingView';
 import responsiveView from './views/ResponsiveView';
+import attachedView from './views/AttachedView';
 
 export default class Index extends React.Component {
 	constructor(props) {
@@ -106,6 +107,7 @@ export default class Index extends React.Component {
 					<DropdownItem text="Examples">
 						<LinkItem text="Theming" to="theming" />
 						<LinkItem text="Responsive UI" to="responsive" />
+						<LinkItem text="Attached" to="attached" />
 					</DropdownItem>
 					<Menu sub={true} align="right">
 						<Item text="play-ui" icon="leaf"/>
@@ -149,6 +151,7 @@ ReactDOM.render(
 
 			<Route path="theming" component={themingView} />
 			<Route path="responsive" component={responsiveView} />
+			<Route path="attached" component={attachedView} />
 		</Route>
 	</Router>,
 	document.getElementById('root')

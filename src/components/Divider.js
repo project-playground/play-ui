@@ -69,11 +69,12 @@ Divider.propTypes = {
 		})
 	]),
 	hidden: PropTypes.bool,
-	fitted: PropTypes.bool
+	fitted: PropTypes.bool,
+	section: PropTypes.bool,
 }
 
 Divider.defaultProps = {
 	type: 'horizontal',
 	hidden: false,
-	fitted: false
+	fitted: false,
 }

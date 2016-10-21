@@ -75,6 +75,13 @@ export default class Message extends UIComponent {
 		if(this.props.size) {
 			componentClass = classNames(componentClass, this.props.size)
 		}
+		
+		if(this.props.attached) {
+			if(this.props.attached === 'attached')
+				componentClass = classNames(componentClass, this.props.attached)
+			else
+				componentClass = classNames(componentClass, this.props.attached + ' attached');
+		}
 
 		return (
 			<div className={componentClass}
@@ -95,5 +102,6 @@ Message.propTypes = {
 	hidden: PropTypes.bool,
 	visible: PropTypes.bool,
 	level: PropTypes.oneOf(['warning', 'info', 'positive', 'success', 'negative', 'error']),
-	colored: PropTypes.oneOf(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'black'])
+	colored: PropTypes.oneOf(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'black']),
+	attached: PropTypes.oneOf(['attached', 'top', 'bottom']),
 }

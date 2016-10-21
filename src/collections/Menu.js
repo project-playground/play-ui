@@ -6,6 +6,7 @@ import menu from 'semantic-ui-css/components/menu.css';
 import classNames from 'classnames';
 
 const CLASSNAME = 'menu';
+const COLUMNS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen'];
 
 export default class Menu extends UIComponent {
 	constructor(props) {
@@ -47,7 +48,18 @@ export default class Menu extends UIComponent {
 		if(this.props.inverted) {
 			componentClass = classNames(componentClass, 'inverted');
 		}
-
+		
+		if(this.props.attached) {
+			if(this.props.attached === 'attached')
+				componentClass = classNames(componentClass, this.props.attached);
+			else
+				componentClass = classNames(componentClass, this.props.attached + ' attached');
+		}
+		
+		if(this.props.item) {
+			componentClass = classNames(componentClass, COLUMNS[this.props.item - 1] + ' item');			
+		}
+		
 		return (
 			<div className={componentClass}
 				ref={(ref) => this.component = ref}>
@@ -57,7 +69,6 @@ export default class Menu extends UIComponent {
 	};
 }
 
-
 Menu.propTypes = {
 	type: PropTypes.oneOf(['basic', 'secondary', 'tabular', 'text', 'pagination']),
 	pointing: PropTypes.bool,
@@ -66,6 +77,8 @@ Menu.propTypes = {
 	vertical: PropTypes.bool,
 	align: PropTypes.oneOf(['right']),
 	inverted: PropTypes.bool,
+	attached: PropTypes.oneOf(['attached', 'top', 'bottom']),
+	item: PropTypes.number,
 }
 
 Menu.defaultProps = {

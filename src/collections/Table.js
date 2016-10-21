@@ -98,6 +98,13 @@ export default class Table extends UIComponent {
         if(this.props.colored) {
             componentClass = classNames(componentClass, this.props.colored);
         }
+        
+        if(this.props.attached) {
+        	if(this.props.attached === 'attached')
+        		componentClass = classNames(componentClass, this.props.attached);
+        	else
+        		componentClass = classNames(componentClass, this.props.attached + ' attached');
+        }
 
 		return (
 			<table className={componentClass}
@@ -125,4 +132,5 @@ Table.propTypes = {
     columnCount: PropTypes.number,
     colored: PropTypes.oneOf(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'brown', 'pink', 'grey', 'black']),
     sortable: PropTypes.bool,
+    attached: PropTypes.oneOf(['attached', 'top', 'bottom']),
 }

@@ -45,7 +45,10 @@ export default class Segment extends UIComponent {
 		}
 
 		if(this.props.padded) {
-			componentClass = classNames(componentClass, this.props.padded);
+			if(this.props.padded === 'padded')
+				componentClass = classNames(componentClass, this.props.padded);
+			else
+			    componentClass = classNames(componentClass, this.props.padded + ' padded');
 		}
 
 		if(this.props.colored) {
@@ -61,8 +64,10 @@ export default class Segment extends UIComponent {
 		}
 
 		if(this.props.attached) {
-			// default - only attached
-			componentClass = classNames(componentClass, this.props.attached + ' attached');
+			if(this.props.attached === 'attached')
+				componentClass = classNames(componentClass, this.props.attached);
+			else
+				componentClass = classNames(componentClass, this.props.attached + ' attached');
 		}
 						
 		return (
@@ -81,8 +86,8 @@ Segment.propTypes = {
 	piled: PropTypes.bool,
 	header: PropTypes.string,
 	compact: PropTypes.bool,
-	padded: PropTypes.oneOf(['default', 'very']),
-	attached: PropTypes.oneOf(['default', 'top', 'bottom']),
+	padded: PropTypes.oneOf(['padded', 'very']),
+	attached: PropTypes.oneOf(['attached', 'top', 'bottom']),
 	colored: PropTypes.oneOf(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'brown', 'pink', 'grey', 'black']),
 	emphasis: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
 }
