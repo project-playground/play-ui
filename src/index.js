@@ -30,6 +30,7 @@ import dimmerView from './views/DimmerView';
 import progressView from './views/ProgressView';
 import ratingView from './views/RatingView';
 import popupView from './views/PopupView';
+import tableView from './views/TableView';
 
 import themingView from './views/ThemingView';
 import responsiveView from './views/ResponsiveView';
@@ -92,6 +93,7 @@ export default class Index extends React.Component {
 						<LinkItem text="List" to="list" />
 						<LinkItem text="Step" to="step" />
 						<LinkItem text="Breadcrumb" to="breadcrumb" />
+						<LinkItem text="Table" to="table" />
 					</DropdownItem>
 					<DropdownItem text="Modules">
 						<LinkItem text="Dropdown" to="dropdown" />
@@ -143,6 +145,7 @@ ReactDOM.render(
 			<Route path="progress" component={progressView} />
 			<Route path="rating" component={ratingView} />
 			<Route path="popup" component={popupView} />
+			<Route path="table" component={tableView} />
 
 			<Route path="theming" component={themingView} />
 			<Route path="responsive" component={responsiveView} />
