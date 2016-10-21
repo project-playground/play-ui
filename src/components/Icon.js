@@ -23,9 +23,16 @@ export default class Icon extends UIComponent {
 			componentClass = classNames(componentClass, this.props.icon);
 		}
 
+		if(this.props.size) {
+			componentClass = classNames(componentClass, this.props.size);
+		}
+
+		if(this.props.colored) {
+			componentClass = classNames(componentClass, this.props.colored);
+		}
+
 		return (
-			<i className={componentClass}
-				ref={(ref) => this.component = ref}></i>
+			<i className={componentClass}></i>
 		);
 	}
 }
@@ -33,4 +40,6 @@ export default class Icon extends UIComponent {
 Icon.propTypes = {
 	icon: PropTypes.string,
 	floated: PropTypes.oneOf(['right']),
+	size: PropTypes.oneOf(['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive']),
+	colored: PropTypes.oneOf(['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'brown', 'pink', 'grey', 'black']),
 }
