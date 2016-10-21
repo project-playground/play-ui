@@ -7,6 +7,8 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 import Divider from '../components/Divider';
 
+import CodeWriter from '../commons/CodeWriter';
+
 export default class ModalView extends React.Component {
 
     constructor(props) {
@@ -39,6 +41,16 @@ export default class ModalView extends React.Component {
                         <Button text="HelloWorld2" />
                     </Actions>
                 </Modal>
+
+                <CodeWriter lang="xml">{
+                    '<Modal header="Modal" closable={true}>\n' +
+                    '  <Content>{lorem}</Content>\n' +
+                    '  <Actions>\n' +
+                    '    <Button text="HelloWorld" />\n' +
+                    '    <Button text="HelloWorld2" />\n' +
+                    '  </Actions>\n' +
+                    '</Modal>\n'
+                }</CodeWriter>
 
                 <Button
                     text="Popup"
