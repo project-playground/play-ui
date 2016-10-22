@@ -21,7 +21,7 @@ export default class ThemingView extends React.Component {
 						<Header size={5} text="Heading 5" />
 					</Column>
 					<Column>
-						<Header size={2} text="Example body text" />
+						<Header size={2} text="Example body text test test test" />
 					</Column>
 					<Column>
 						<Grid column={3} stackable={true} padded={true} valign="middle" centered={true} aligned={true}>
