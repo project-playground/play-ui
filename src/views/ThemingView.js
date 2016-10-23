@@ -66,7 +66,8 @@ export default class ThemingView extends React.Component {
 						<Item text="Brand"></Item>
 						<LinkItem text="Link" state="active"></LinkItem>
 						<LinkItem text="Link"></LinkItem>
-						<Dropdown text="Dropdown">
+						<Item>
+							<Dropdown text="Dropdown">
 								<LinkItem text="Action"/>
 								<LinkItem text="Another Action"/>
 								<LinkItem text="Something else here"/>
@@ -75,7 +76,8 @@ export default class ThemingView extends React.Component {
 								<LinkItem text="Separated Link"/>
 								<Divider></Divider>
 								<LinkItem text="One more separated link"/>
-						</Dropdown>
+							</Dropdown>
+						</Item>
 						<Menu sub={true} align="right">
 							<Item>
 								<Input placeholder="Search" icon="search"></Input>
@@ -89,7 +91,8 @@ export default class ThemingView extends React.Component {
 						<Item text="Brand"></Item>
 						<LinkItem text="Link"></LinkItem>
 						<LinkItem text="Link" state="active"></LinkItem>
-						<Dropdown text="Dropdown">
+						<Item>
+							<Dropdown text="Dropdown">
 								<LinkItem text="Action"/>
 								<LinkItem text="Another Action"/>
 								<LinkItem text="Something else here"/>
@@ -98,7 +101,8 @@ export default class ThemingView extends React.Component {
 								<LinkItem text="Separated Link"/>
 								<Divider></Divider>
 								<LinkItem text="One more separated link"/>
-						</Dropdown>
+							</Dropdown>
+						</Item>
 						<Menu sub={true} align="right">
 							<Item>
 								<Input placeholder="Search" icon="search"></Input>
@@ -111,16 +115,18 @@ export default class ThemingView extends React.Component {
 					<Menu type="secondary">
 						<Item text="Brand" state="active"></Item>
 						<LinkItem text="Link"></LinkItem>
-						<Dropdown text="Dropdown">
-								<LinkItem text="Action"/>
-								<LinkItem text="Another Action"/>
-								<LinkItem text="Something else here"/>
-								<LinkItem text="Action"/>
-								<Divider></Divider>
-								<LinkItem text="Separated Link"/>
-								<Divider></Divider>
-								<LinkItem text="One more separated link"/>
-						</Dropdown>
+						<Item>
+							<Dropdown text="Dropdown">
+									<LinkItem text="Action"/>
+									<LinkItem text="Another Action"/>
+									<LinkItem text="Something else here"/>
+									<LinkItem text="Action"/>
+									<Divider></Divider>
+									<LinkItem text="Separated Link"/>
+									<Divider></Divider>
+									<LinkItem text="One more separated link"/>
+							</Dropdown>
+						</Item>
 						<Menu sub={true} align="right">
 							<Item>
 								<Input placeholder="Search" icon="search"></Input>
