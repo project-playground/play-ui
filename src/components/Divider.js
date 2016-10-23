@@ -57,7 +57,7 @@ export default class Divider extends UIComponent {
 				result = <div className={componentClass}>{text}</div>;
 			} else {
 				componentClass = classNames(componentClass, 'icon');
-				componentClass = classNames(componentClass, {text});
+				componentClass = classNames(componentClass, text);
 				result = <i className={componentClass}/>;
 			}
 		} else {
