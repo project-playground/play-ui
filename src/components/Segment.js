@@ -18,12 +18,17 @@ export default class Segment extends UIComponent {
 
 	render() {
 		let componentClass = this.getClassName();
-		
+
 		if(this.props.attached) {
 			// default - only attached
 			componentClass = classNames(componentClass, this.props.attached + ' attached');
 		}
-						
+
+		if(this.props.status) {
+			// default - only attached
+			componentClass = classNames(componentClass, this.props.status);
+		}
+
 		return (
 			<div className={componentClass}
 				ref={(ref) => this.component = ref}>
@@ -35,6 +40,7 @@ export default class Segment extends UIComponent {
 
 Segment.propTypes = {
 	attached: PropTypes.oneOf(['default', 'top', 'bottom']),
+	status:PropTypes.oneOf(['inverted']),
 }
 
 /*

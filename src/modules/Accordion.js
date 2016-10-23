@@ -19,15 +19,15 @@ export default class Accordion extends UIComponent {
 		let componentClass = this.getClassName();
 
 		if(this.props.styled) {
-				componentClass = classNames(componentClass, 'fade');
+				componentClass = classNames(componentClass, 'styled');
 		}
 
 		if(this.props.fluid) {
-				componentClass = classNames(componentClass, 'fluid');
+				componentClass = classNames(componentClass, 'styled fluid');
 		}
 
 		if(this.props.invented) {
-				componentClass = classNames(componentClass, 'invented');
+				componentClass = classNames(componentClass, 'inverted');
 		}
 
 		return (

@@ -23,6 +23,10 @@ export default class Content extends Component {
       componentClass = classNames(this.getClassName(), this.props.state);
     }
 
+		if(this.props.title) {
+      componentClass = classNames(this.getClassName(), this.props.title);
+    }
+
 		return (
       <div className={componentClass}>
         {this.props.children}
@@ -32,5 +36,6 @@ export default class Content extends Component {
 }
 
 Content.propTypes = {
-    state: PropTypes.oneOf(['visible', 'hidden']),
+    state: PropTypes.oneOf(['visible', 'hidden', 'active', ' ']),
+		title: PropTypes.string,
 };
