@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import Grid from '../collections/Grid';
 import Row from '../collections/Row';
 import Column from '../collections/Column';
+import Menu from '../collections/Menu';
+import Item from '../collections/Item';
 
 export default class ThemingView extends React.Component {
 	render() {
@@ -22,7 +24,7 @@ export default class ThemingView extends React.Component {
 						<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
 					</Column>
 					<Column>
-						 <Header size={2} text="Heading 2" />
+						 <Header size={2} text="Example body text" />
 						 <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
 						 <p><small>This line of text is meant to be treated as fine print.</small></p>
 						 <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
@@ -30,8 +32,7 @@ export default class ThemingView extends React.Component {
 						 <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>				
 					</Column>
 					<Column>
-						
-						<Grid column={3} stackable={true} padded={true} aligne="center">
+						<Grid column={3} stackable={true} padded={true} valign="middle" centered={true} aligned={true}>
 							<Column colored="red">Red</Column>
 							<Column colored="orange">Orange</Column>
 							<Column colored="yellow">Yellow</Column>
@@ -48,7 +49,16 @@ export default class ThemingView extends React.Component {
 						</Grid>
 					</Column>
 				</Grid>
+
 				<Header size={2} divide={true} text="Menu" />
+
+				<Menu itme={4} >
+					<Item text="Brand"></Item>
+					<Item text="Link"></Item>
+					<Item text="Link"></Item>
+					<Item text="Dropdown"></Item>
+
+				</Menu>
 			</div>		
 		);
 	}
