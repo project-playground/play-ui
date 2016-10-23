@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Breadcrumb from '../components/Breadcrumb';
+import Section from '../collection/Section';
+import Divider from '../components/Divider';
 
 export default class BreadcrumbView extends React.Component {
 	render() {
@@ -16,12 +18,12 @@ export default class BreadcrumbView extends React.Component {
 			<div>
 				<h2>Breadcrumb</h2>
 				<h3>Breadcrumb</h3>
-				<Breadcrumb divider={dividerObj}>
-					<div class="section">a</div>
-					<div class="divider">/</div>
-					<div class="section">b</div>
-					<div class="divider">/</div>
-					<div class="section active">c</div>
+				<Breadcrumb>
+					<Section>a</Section>
+					<Divider>/</Divider>
+					<Section>b</Section>
+					<Divider>/</Divider>
+					<Section active={true}>c</Section>
 				</Breadcrumb>
 
 				<Breadcrumb divider={dividerIcon} >
