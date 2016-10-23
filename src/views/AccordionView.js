@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Accordion from '../modules/Accordion';
+import Content from '../components/Content';
+import Segment from '../components/Segment';
 import Icon from '../components/Icon';
 import Header from '../components/Header';
 import Divider from '../components/Divider';
