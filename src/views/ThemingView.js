@@ -30,7 +30,8 @@ export default class ThemingView extends React.Component {
 						 <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>				
 					</Column>
 					<Column>
-						<Grid column={3} stackable={true} padded={true} valign="middle" centered={true} aligned={true}>
+						
+						<Grid column={3} stackable={true} padded={true} aligne="center">
 							<Column colored="red">Red</Column>
 							<Column colored="orange">Orange</Column>
 							<Column colored="yellow">Yellow</Column>
