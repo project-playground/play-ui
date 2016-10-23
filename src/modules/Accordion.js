@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 const CLASSNAME = 'accordion';
 
-export default class Reveal extends UIComponent {
+export default class Accordion extends UIComponent {
 	constructor(props) {
 		super(props);
 		this.state = {};
