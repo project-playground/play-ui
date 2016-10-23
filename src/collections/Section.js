@@ -18,7 +18,7 @@ export default class Section extends Component {
 			extProps.className = componentClass;
 		}
 
-		if (active) {
+		if (this.props.active) {
 			extProps.className = 'active';
 		}
 
