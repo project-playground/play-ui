@@ -31,11 +31,7 @@ export default class Section extends Component {
 			result = <div {...extProps}>{text}</div>;
 		}
 
-		return (
-			<div {...extProps}>
-				{text}
-			</div>
-		);
+		return result;
 	};
 }
 
