@@ -8,7 +8,7 @@ export default class BreadcrumbView extends React.Component {
 	render() {
 		let dividerObj = {
 			type: 'text',
-			text: '<'
+			text: '/'
 		};
 		let dividerIcon = {
 			type: 'icon',
@@ -19,11 +19,27 @@ export default class BreadcrumbView extends React.Component {
 				<h2>Breadcrumb</h2>
 				<h3>Breadcrumb</h3>
 				<Breadcrumb>
-					<Section text="a"></Section>
-					<Divider breadcrumb={dividerObj}>/</Divider>
-					<Section text="b"></Section>
-					<Divider breadcrumb={dividerObj}>/</Divider>
-					<Section active={true} text="c"></Section>
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerObj}></Divider>
+					<Section text="Store"></Section>
+					<Divider breadcrumb={dividerObj}></Divider>
+					<Section active={true} text="T-Shirt"></Section>
+				</Breadcrumb>
+				<Breadcrumb>
+					<Section linkTo="#" text="Home"></Section>
+					<Divider breadcrumb={dividerIcon}></Divider>
+					<Section linkTo="" text="Store"></Section>
+					<Divider breadcrumb={dividerIcon}></Divider>
+					<Section active={true} text="T-Shirt"></Section>
+				</Breadcrumb>
+
+				<h3>Divider</h3>
+				<Breadcrumb>
+					<Section linkTo="#" text="Store"></Section>
+					<Divider breadcrumb={dividerObj}></Divider>
+					<Section linkTo="" text="Registration"></Section>
+					<Divider breadcrumb={dividerObj}></Divider>
+					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
 
 			</div>

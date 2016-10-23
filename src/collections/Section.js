@@ -14,13 +14,21 @@ export default class Section extends Component {
 		let componentClass = 'section';
 		let extProps = {};
 		let text = this.props.text;
+
+		let result;
 		
 		if(componentClass) {
 			extProps.className = componentClass;
 		}
 
 		if (this.props.active) {
-			extProps.className = 'active';
+			extProps.className = classNames(extProps.className, 'active');
+		}
+
+		if (this.props.linkTo) {
+			result = <a {...extProps} href={this.props.linkTo}>{text}</a>;
+		} else {
+			result = <div {...extProps}>{text}</div>;
 		}
 
 		return (
