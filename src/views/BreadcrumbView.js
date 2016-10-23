@@ -27,7 +27,7 @@ export default class BreadcrumbView extends React.Component {
 				<h2>Breadcrumb</h2>
 				<h3>Breadcrumb</h3>
 				<Breadcrumb>
-					<Section linkTo="" text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerObj1}></Divider>
 					<Section linkTo="#" text="Store"></Section>
 					<Divider breadcrumb={dividerObj1}></Divider>
@@ -37,7 +37,7 @@ export default class BreadcrumbView extends React.Component {
 				<Breadcrumb>
 					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerIcon1}></Divider>
-					<Section linkTo="" text="Store"></Section>
+					<Section linkTo="#" text="Store"></Section>
 					<Divider breadcrumb={dividerIcon1}></Divider>
 					<Section active={true} text="T-Shirt"></Section>
 				</Breadcrumb>
@@ -48,7 +48,7 @@ export default class BreadcrumbView extends React.Component {
 				<Breadcrumb>
 					<Section linkTo="#" text="Store"></Section>
 					<Divider breadcrumb={dividerObj1}></Divider>
-					<Section linkTo="" text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerObj1}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
@@ -74,16 +74,16 @@ export default class BreadcrumbView extends React.Component {
 
 				<h3>Link</h3>
 				<Breadcrumb>
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerObj1}></Divider>
-					<Section active={true} text="Search for: <a href='#'>paper towels</a>"></Section>
+					<Section linkTo="#" active={true} text="Search for: paper towels"></Section>
 				</Breadcrumb>
 
 				<Divider/>
 
 				<h3>Active</h3>
 				<Breadcrumb>
-					<Section text="Products"></Section>
+					<Section linkTo="#" text="Products"></Section>
 					<Divider breadcrumb={dividerObj1}></Divider>
 					<Section active={true} text="Paper Towels"></Section>
 				</Breadcrumb>
@@ -92,65 +92,65 @@ export default class BreadcrumbView extends React.Component {
 
 				<h3>Variations</h3>
 				<Breadcrumb size="mini">
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
-					<Section text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
 				<br/>
 				<Breadcrumb size="tiny">
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
-					<Section text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
 				<br/>
 				<Breadcrumb size="small">
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
-					<Section text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
 				<br/>
 				<Breadcrumb size="medium">
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
-					<Section text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
 				<br/>
 				<Breadcrumb size="large">
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
-					<Section text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
 				<br/>
 				<Breadcrumb size="big">
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
-					<Section text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
 				<br/>
 				<Breadcrumb size="huge">
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
-					<Section text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
 				<br/>
 				<Breadcrumb size="massive">
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
-					<Section text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
