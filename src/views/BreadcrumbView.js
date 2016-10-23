@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Breadcrumb from '../components/Breadcrumb';
-import Section from '../collection/Section';
+import Section from '../collections/Section';
 import Divider from '../components/Divider';
 
 export default class BreadcrumbView extends React.Component {
