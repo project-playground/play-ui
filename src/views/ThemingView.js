@@ -67,7 +67,7 @@ export default class ThemingView extends React.Component {
 						<LinkItem text="Link" state="active"></LinkItem>
 						<LinkItem text="Link"></LinkItem>
 						<Item>
-							<Dropdown text="Dropdown">
+							{/*<Dropdown text="Dropdown">
 								<LinkItem text="Action"/>
 								<LinkItem text="Another Action"/>
 								<LinkItem text="Something else here"/>
@@ -76,7 +76,7 @@ export default class ThemingView extends React.Component {
 								<LinkItem text="Separated Link"/>
 								<Divider></Divider>
 								<LinkItem text="One more separated link"/>
-							</Dropdown>
+							</Dropdown> */}
 						</Item>
 						<Menu sub={true} align="right">
 							<Item>
@@ -92,7 +92,7 @@ export default class ThemingView extends React.Component {
 						<LinkItem text="Link"></LinkItem>
 						<LinkItem text="Link" state="active"></LinkItem>
 						<Item>
-							<Dropdown text="Dropdown">
+							{/*<Dropdown text="Dropdown">
 								<LinkItem text="Action"/>
 								<LinkItem text="Another Action"/>
 								<LinkItem text="Something else here"/>
@@ -101,7 +101,7 @@ export default class ThemingView extends React.Component {
 								<LinkItem text="Separated Link"/>
 								<Divider></Divider>
 								<LinkItem text="One more separated link"/>
-							</Dropdown>
+							</Dropdown> */}
 						</Item>
 						<Menu sub={true} align="right">
 							<Item>
@@ -116,7 +116,7 @@ export default class ThemingView extends React.Component {
 						<Item text="Brand" state="active"></Item>
 						<LinkItem text="Link"></LinkItem>
 						<Item>
-							<Dropdown text="Dropdown">
+							{/*<Dropdown text="Dropdown">
 									<LinkItem text="Action"/>
 									<LinkItem text="Another Action"/>
 									<LinkItem text="Something else here"/>
@@ -125,7 +125,7 @@ export default class ThemingView extends React.Component {
 									<LinkItem text="Separated Link"/>
 									<Divider></Divider>
 									<LinkItem text="One more separated link"/>
-							</Dropdown>
+							</Dropdown>*/}
 						</Item>
 						<Menu sub={true} align="right">
 							<Item>
