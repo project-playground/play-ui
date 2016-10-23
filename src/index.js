@@ -30,6 +30,7 @@ import dimmerView from './views/DimmerView';
 import progressView from './views/ProgressView';
 import ratingView from './views/RatingView';
 import popupView from './views/PopupView';
+import accordionView from './views/AccordionView';
 
 import themingView from './views/ThemingView';
 
@@ -99,6 +100,7 @@ export default class Index extends React.Component {
 						<LinkItem text="Progress" to="progress" />
 						<LinkItem text="Rating" to="rating" />
 						<LinkItem text="Popup" to="popup" />
+						<LinkItem text="Accordion" to="accordion" />
 					</DropdownItem>
 					<DropdownItem text="Examples">
 						<LinkItem text="Theming" to="theming" />
@@ -141,6 +143,7 @@ ReactDOM.render(
 			<Route path="progress" component={progressView} />
 			<Route path="rating" component={ratingView} />
 			<Route path="popup" component={popupView} />
+			<Route path="accordion" component={accordionView} />
 
 			<Route path="theming" component={themingView} />
 		</Route>
