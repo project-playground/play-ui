@@ -54,10 +54,6 @@ export default class Breadcrumb extends UIComponent {
 }
 
 Breadcrumb.propTypes = {
-	divider: ({
-		type: PropTypes.oneOf(['icon', 'text']),
-		text: PropTypes.string
-	}),
 	size: PropTypes.oneOf(['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive'])
 }
 

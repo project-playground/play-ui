@@ -26,11 +26,6 @@ export default class BreadcrumbView extends React.Component {
 					<Section active={true}>c</Section>
 				</Breadcrumb>
 
-				<Breadcrumb divider={dividerIcon} >
-					<div class="section">a</div>
-					<div class="section">b</div>
-					<div class="section">c</div>
-				</Breadcrumb>
 			</div>
 		);
 	}
