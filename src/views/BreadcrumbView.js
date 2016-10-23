@@ -27,9 +27,9 @@ export default class BreadcrumbView extends React.Component {
 				<h2>Breadcrumb</h2>
 				<h3>Breadcrumb</h3>
 				<Breadcrumb>
-					<Section text="Home"></Section>
+					<Section linkTo="#" text="Home"></Section>
 					<Divider breadcrumb={dividerObj1}></Divider>
-					<Section text="Store"></Section>
+					<Section linkTo="#" text="Store"></Section>
 					<Divider breadcrumb={dividerObj1}></Divider>
 					<Section active={true} text="T-Shirt"></Section>
 				</Breadcrumb>
@@ -98,6 +98,7 @@ export default class BreadcrumbView extends React.Component {
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
+				<br/>
 				<Breadcrumb size="tiny">
 					<Section text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
@@ -105,6 +106,7 @@ export default class BreadcrumbView extends React.Component {
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
+				<br/>
 				<Breadcrumb size="small">
 					<Section text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
@@ -112,6 +114,7 @@ export default class BreadcrumbView extends React.Component {
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
+				<br/>
 				<Breadcrumb size="medium">
 					<Section text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
@@ -119,6 +122,7 @@ export default class BreadcrumbView extends React.Component {
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
+				<br/>
 				<Breadcrumb size="large">
 					<Section text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
@@ -126,6 +130,7 @@ export default class BreadcrumbView extends React.Component {
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
+				<br/>
 				<Breadcrumb size="big">
 					<Section text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
@@ -133,6 +138,7 @@ export default class BreadcrumbView extends React.Component {
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
+				<br/>
 				<Breadcrumb size="huge">
 					<Section text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
@@ -140,6 +146,7 @@ export default class BreadcrumbView extends React.Component {
 					<Divider breadcrumb={dividerIcon2}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
+				<br/>
 				<Breadcrumb size="massive">
 					<Section text="Home"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
