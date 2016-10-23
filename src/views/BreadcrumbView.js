@@ -6,13 +6,21 @@ import Divider from '../components/Divider';
 
 export default class BreadcrumbView extends React.Component {
 	render() {
-		let dividerObj = {
+		let dividerObj1 = {
 			type: 'text',
 			text: '/'
 		};
-		let dividerIcon = {
+		let dividerIcon1 = {
 			type: 'icon',
 			text: 'right angle'
+		}
+		let dividerIcon2 = {
+			type: 'icon',
+			text: 'right chevron'
+		}
+		let dividerIcon3 = {
+			type: 'icon',
+			text: 'right arrow'
 		}
 		return (
 			<div>
@@ -20,28 +28,126 @@ export default class BreadcrumbView extends React.Component {
 				<h3>Breadcrumb</h3>
 				<Breadcrumb>
 					<Section text="Home"></Section>
-					<Divider breadcrumb={dividerObj}></Divider>
+					<Divider breadcrumb={dividerObj1}></Divider>
 					<Section text="Store"></Section>
-					<Divider breadcrumb={dividerObj}></Divider>
+					<Divider breadcrumb={dividerObj1}></Divider>
 					<Section active={true} text="T-Shirt"></Section>
 				</Breadcrumb>
+				<br/>
 				<Breadcrumb>
 					<Section linkTo="#" text="Home"></Section>
-					<Divider breadcrumb={dividerIcon}></Divider>
+					<Divider breadcrumb={dividerIcon1}></Divider>
 					<Section linkTo="" text="Store"></Section>
-					<Divider breadcrumb={dividerIcon}></Divider>
+					<Divider breadcrumb={dividerIcon1}></Divider>
 					<Section active={true} text="T-Shirt"></Section>
 				</Breadcrumb>
+
+				<Divider/>
 
 				<h3>Divider</h3>
 				<Breadcrumb>
 					<Section linkTo="#" text="Store"></Section>
-					<Divider breadcrumb={dividerObj}></Divider>
+					<Divider breadcrumb={dividerObj1}></Divider>
 					<Section linkTo="" text="Registration"></Section>
-					<Divider breadcrumb={dividerObj}></Divider>
+					<Divider breadcrumb={dividerObj1}></Divider>
+					<Section active={true} text="Personal Information"></Section>
+				</Breadcrumb>
+				<br/>
+				<Breadcrumb>
+					<Section linkTo="#" text="Store"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section linkTo="" text="Registration"></Section>
+					<Divider breadcrumb={dividerIcon3}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
 
+				<Divider/>
+
+				<h3>Section</h3>
+				<Breadcrumb>
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerObj1}></Divider>
+					<Section active={true} text="Search"></Section>
+				</Breadcrumb>
+
+				<Divider/>
+
+				<h3>Link</h3>
+				<Breadcrumb>
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerObj1}></Divider>
+					<Section active={true} text="Search for: <a href='#'>paper towels</a>"></Section>
+				</Breadcrumb>
+
+				<Divider/>
+
+				<h3>Active</h3>
+				<Breadcrumb>
+					<Section text="Products"></Section>
+					<Divider breadcrumb={dividerObj1}></Divider>
+					<Section active={true} text="Paper Towels"></Section>
+				</Breadcrumb>
+
+				<Divider/>
+
+				<h3>Variations</h3>
+				<Breadcrumb size="mini">
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section text="Registration"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section active={true} text="Personal Information"></Section>
+				</Breadcrumb>
+				<Breadcrumb size="tiny">
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section text="Registration"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section active={true} text="Personal Information"></Section>
+				</Breadcrumb>
+				<Breadcrumb size="small">
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section text="Registration"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section active={true} text="Personal Information"></Section>
+				</Breadcrumb>
+				<Breadcrumb size="medium">
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section text="Registration"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section active={true} text="Personal Information"></Section>
+				</Breadcrumb>
+				<Breadcrumb size="large">
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section text="Registration"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section active={true} text="Personal Information"></Section>
+				</Breadcrumb>
+				<Breadcrumb size="big">
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section text="Registration"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section active={true} text="Personal Information"></Section>
+				</Breadcrumb>
+				<Breadcrumb size="huge">
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section text="Registration"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section active={true} text="Personal Information"></Section>
+				</Breadcrumb>
+				<Breadcrumb size="massive">
+					<Section text="Home"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section text="Registration"></Section>
+					<Divider breadcrumb={dividerIcon2}></Divider>
+					<Section active={true} text="Personal Information"></Section>
+				</Breadcrumb>
+				
 			</div>
 		);
 	}
