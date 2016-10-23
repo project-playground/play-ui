@@ -12,18 +12,18 @@ export default class BreadcrumbView extends React.Component {
 		};
 		let dividerIcon = {
 			type: 'icon',
-			text: 'right angle icon'
+			text: 'right angle'
 		}
 		return (
 			<div>
 				<h2>Breadcrumb</h2>
 				<h3>Breadcrumb</h3>
 				<Breadcrumb>
-					<Section>a</Section>
-					<Divider>/</Divider>
-					<Section>b</Section>
-					<Divider>/</Divider>
-					<Section active={true}>c</Section>
+					<Section text="a"></Section>
+					<Divider breadcrumb={dividerObj}>/</Divider>
+					<Section text="b"></Section>
+					<Divider breadcrumb={dividerObj}>/</Divider>
+					<Section active={true} text="c"></Section>
 				</Breadcrumb>
 
 			</div>

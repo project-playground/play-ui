@@ -11,8 +11,9 @@ export default class Section extends Component {
 	}
 
 	render() {
-		let componentClass = '';
+		let componentClass = 'section';
 		let extProps = {};
+		let text = this.props.text;
 		
 		if(componentClass) {
 			extProps.className = componentClass;
@@ -24,12 +25,14 @@ export default class Section extends Component {
 
 		return (
 			<div {...extProps}>
+				{text}
 			</div>
 		);
 	};
 }
 
 Section.propTypes = {
+	text: PropTypes.string.isRequired,
 	linkTo: PropTypes.string,
 	active: PropTypes.bool
 }

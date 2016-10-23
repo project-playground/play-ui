@@ -51,8 +51,17 @@ export default class Divider extends UIComponent {
 				}
 			}
 			result = <h4 className={componentClass}>{icon}{title}</h4>;
+		} else if(this.props.breadcrumb) {
+			let text = this.props.breadcrumb.text;
+			if (this.props.breadcrumb.type == 'text') {
+				result = <div className={componentClass}>{text}</div>;
+			} else {
+				componentClass = classNames(componentClass, 'icon');
+				componentClass = classNames(componentClass, {text});
+				result = <i className={componentClass}/>;
+			}
 		} else {
-			result = <div className={componentClass}></div>
+			result = <div className={componentClass}></div>;
 		}
 
 		return result;
@@ -69,7 +78,11 @@ Divider.propTypes = {
 		})
 	]),
 	hidden: PropTypes.bool,
-	fitted: PropTypes.bool
+	fitted: PropTypes.bool,
+	breadcrumb: PropTypes.shape({
+		type: PropTypes.oneOf(['icon', 'text']),
+		text: PropTypes.string
+	})
 }
 
 Divider.defaultProps = {
