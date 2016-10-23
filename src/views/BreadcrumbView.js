@@ -56,7 +56,7 @@ export default class BreadcrumbView extends React.Component {
 				<Breadcrumb>
 					<Section linkTo="#" text="Store"></Section>
 					<Divider breadcrumb={dividerIcon2}></Divider>
-					<Section linkTo="" text="Registration"></Section>
+					<Section linkTo="#" text="Registration"></Section>
 					<Divider breadcrumb={dividerIcon3}></Divider>
 					<Section active={true} text="Personal Information"></Section>
 				</Breadcrumb>
