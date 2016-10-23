@@ -8,6 +8,7 @@ import Menu from '../collections/Menu';
 import Item from '../collections/Item';
 import LinkItem from '../collections/LinkItem';
 import Dropdown from '../modules/Dropdown';
+import DropdownItem from '../modules/DropdownItem';
 import Divider from '../components/Divider';
 import Input from '../components/Input';
 import Button from '../components/Button';
