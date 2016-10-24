@@ -18,6 +18,7 @@ import Tbody from '../collections/Tbody';
 import Tr from '../collections/Tr';
 import Th from '../collections/Th';
 import Td from '../collections/Td';
+import Icon from '../components/Icon';
 
 
 export default class ThemingView extends React.Component {
@@ -338,7 +339,7 @@ export default class ThemingView extends React.Component {
 							<Input placeholder="Loading..." state="loading" />
 							<Input placeholder="Loading..." state="loading" align="right"/>
 						</Column>
-						
+
 						<Colum>
 						</Colum>
 					</Grid>
