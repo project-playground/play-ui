@@ -84,6 +84,10 @@ export default class Header extends UIComponent {
       	<h5 className={componentClass}
       		ref={(ref) => this.component = ref}>{content}{subHeader}{iContent}{imgContent}{textContent}</h5>
       );
+    } else if(this.props.aHeader) {
+      header = (
+        <a className={componentClass}>{content}</a>
+      );
     }
 
     return header;
