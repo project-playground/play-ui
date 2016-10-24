@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import UIComponent from './UIComponent';
+import React, { Component, PropTypes  } from 'react';
+import UIComponent from '../components/UIComponent';
 import classNames from 'classnames';
 
 const CLASSNAME = 'items';
