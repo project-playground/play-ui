@@ -12,6 +12,13 @@ import Divider from '../components/Divider';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import Buttons from '../components/Buttons';
+import Table from '../collections/Table';
+import Thead from '../collections/Thead';
+import Tbody from '../collections/Tbody';
+import Tr from '../collections/Tr';
+import Th from '../collections/Th';
+import Td from '../collections/Td';
+
 
 export default class ThemingView extends React.Component {
 	render() {
@@ -19,7 +26,6 @@ export default class ThemingView extends React.Component {
 			<div>
 				<Header size={1} text="Theming Examples" align="center" />
 
-				<div>
 					<Header size={2} divide={true} text="Site" />
 					<Grid column={3} stackable={true}>
 						<Column>
@@ -56,9 +62,8 @@ export default class ThemingView extends React.Component {
 							</Grid>
 						</Column>
 					</Grid>
-				</div>
 
-				<div>
+
 					<Header size={2} divide={true} text="Menu" />
 
 					<Menu>
@@ -162,9 +167,9 @@ export default class ThemingView extends React.Component {
 							<Item text="Right Text" />
 						</Menu>
 					</Menu>
-				</div>
 
-				<div>
+
+
 					<Header size={2} divide={true} text="Buttons" />
 					<Divider/>
 
@@ -225,15 +230,119 @@ export default class ThemingView extends React.Component {
 							<Divider fitted={true}/>
 						</Column>
 					</Grid>	
-				</div>
 
-				<div>
+
 					<Header size={2} divide={true} text="Table" />
-				</div>
+					<Grid column={2}>
+					<Column>
+						<Table aligned="right">
+							<Thead>
+								<Tr><Th aligned="left">Person</Th>
+								<Th>Calories</Th>
+								<Th>Fat</Th>
+								<Th>Protein</Th>
+							</Tr></Thead>
+							<Tbody>
+								<Tr>
+									<Td aligned="left">Delmar</Td>
+									<Td>36</Td>
+									<Td>36g</Td>
+									<Td>2g</Td>
+								</Tr>
+								<Tr>
+									<Td aligned="left">Louise</Td>
+									<Td>24</Td>
+									<Td>24g</Td>
+									<Td>29g</Td>
+								</Tr>
+								<Tr>
+									<Td aligned="left">Terrell</Td>
+									<Td>22</Td>
+									<Td>11g</Td>
+									<Td>9g</Td>
+								</Tr>
+								<Tr>
+									<Td aligned="left">Marion</Td>
+									<Td>7</Td>
+									<Td>35g</Td>
+									<Td>3g</Td>
+								</Tr>
+								<Tr>
+									<Td aligned="left">Clayton</Td>
+									<Td>7</Td>
+									<Td>38g</Td>
+									<Td>20g</Td>
+								</Tr>
+							</Tbody>
+						</Table>
+						</Column>
+						<Column>
+							<Table celled={true}>
+								<Thead>
+									<Tr>
+										<Th>Name</Th>
+										<Th>Status</Th>
+										<Th>Notes</Th>
+									</Tr>
+								</Thead>
+								<Tbody>
+									<Tr>
+										<Td>No Name Specified</Td>
+										<Td>Approved</Td>
+										<Td>None</Td>
+									</Tr>
+									<Tr state="error">
+										<Td>Jimmy</Td>
+										<Td>Cannot pull data</Td>
+										<Td>None</Td>
+									</Tr>
+									<Tr>
+										<Td>Jamie</Td>
+										<Td>Approved</Td>
+										<Td state="error"><Icon icon="attention"/> Classified</Td>
+									</Tr>
+									<Tr>
+										<Td>Jill</Td>
+										<Td>Approved</Td>
+										<Td>None</Td>
+									</Tr>
+								</Tbody>
+							</Table>
+						</Column>
+					</Grid>
 
-				<div>
+
+
+
 					<Header size={2} divide={true} text="Input" />
-				</div>
+					<Grid column={2}>
+						<Column>
+							<Input placeholder="Search..." icon="search"></Input><Button text="Submit"></Button>
+							<Divider/>
+
+							<Input placeholder="Search..." state="error"></Input>
+							<Divider/>
+
+							<Input placeholder="Placeholder" state="error"></Input>
+								<Dropdown text="Dropdown">
+									<LinkItem text="Choice1"/>
+									<LinkItem text="Choice2"/>
+									<LinkItem text="Choice3"/>
+								</Dropdown>
+							<Divider/>
+
+							<Input placeholder="Search..." icon="search" type="text" align="right"></Input>
+							<Input placeholder="Search..." icon="search" type="text"></Input>
+							<Divider/>
+
+							<Input placeholder="Loading..." state="loading" />
+							<Input placeholder="Loading..." state="loading" align="right"/>
+						</Column>
+						
+						<Colum>
+						</Colum>
+					</Grid>
+					
 			</div>		
 		);
 	}
