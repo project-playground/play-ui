@@ -97,13 +97,13 @@ export default class CheckboxView extends Component {
         <Checkbox type="toggle" inputType="checkbox" name="public" label="Subscribe to weekly newsletter" />
         
         <Header size={3} text="Read-only" subHeader="A checkbox can be read-only and unable to change states" />
-        <Checkbox type="read-only" inputType="checkbox" label="Read Only" />
+        <Checkbox inputType="checkbox" readOnly={true} label="Read Only" />
 
         <Header size={3} text="Checked" subHeader="A checkbox can be checked" />
-        <Checkbox type="checked" inputType="checkbox" label="Active" />
+        <Checkbox inputType="checkbox" checked={true} label="Active" />
 
         <Header size={3} text="Disabled" subHeader="A checkbox can be read-only and unable to change states" />
-        <Checkbox type="disabled" inputType="checkbox" disabled={true} label="Disabled" />
+        <Checkbox inputType="checkbox" disabled={true} label="Disabled" />
         <Checkbox type="toggle" inputType="checkbox" disabled={true} label="Disabled" />
         
         <Header size={3} text="Fitted" subHeader="A fitted checkbox does not leave padding for a label" />

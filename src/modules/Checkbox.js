@@ -25,17 +25,32 @@ export default class Checkbox extends UIComponent {
   render() {
     let componentClass = this.getClassName();
     let disabled = this.props.disabled ? 'disabled' : '';
+    let readOnly = this.props.readOnly ? 'readOnly' : '';
+    let checked = this.props.checked ? 'checked' : '';
     let label = this.props.label ? (<label>{this.props.label}</label>) : ''; 
     
     return <div className={componentClass} ref={(ref) => this.component = ref} >
-      <input name={this.props.name} type={this.props.inputType} disabled={disabled} />
+      <input name={this.props.name} type={this.props.inputType} disabled={disabled} readOnly={readOnly} checked={checked} />
       {label}
     </div>;
   };
 }
 
 Checkbox.propTypes = {
-  type: PropTypes.oneOf(['default', 'radio', 'slider', 'toggle', 'read-only', 'checked', 'disabled']),
-  inputType: PropTypes.oneOf(['checkbox', 'radio']),
-  fitted: PropTypes.bool
+  type: PropTypes.oneOf(['default', 'radio', 'slider', 'toggle']).isRequired,
+  inputType: PropTypes.oneOf(['checkbox', 'radio']).isRequired,
+  label: PropTypes.string,
+  fitted: PropTypes.bool,
+  disabled: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['disabled'])
+  ]),
+  readOnly: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['readOnly'])
+  ]),
+  checked: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['checked'])
+  ])
 }
